@@ -355,7 +355,7 @@ def print_analysis(results):
 
 if __name__ == "__main__":
     # You can change these parameters
-    DEVICE = 'cpu'  # Change to 'cuda' when running on Kaggle
+    DEVICE = 'cuda'  # Change to 'cuda' when running on Kaggle
     MODEL_NAME = 'gpt2-xl'  # or 'gpt2', 'gpt2-medium', 'gpt2-large'
     
     # Run experiments
