@@ -7,7 +7,7 @@ import os
 import time
 import torch
 import tiktoken
-from model import GPT
+from Asst1.nanoGPT.model_claude import GPT
 import psutil
 import json
 import matplotlib.pyplot as plt

@@ -6,7 +6,7 @@ import pickle
 from contextlib import nullcontext
 import torch
 import tiktoken
-from model import GPTConfig, GPT
+from Asst1.nanoGPT.model_claude import GPTConfig, GPT
 import time
 import psutil
 import tracemalloc
