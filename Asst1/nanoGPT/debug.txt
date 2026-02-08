@@ -930,3 +930,21 @@ OVERALL SUMMARY:
   Memory increase: 137.75 MB
   Peak Python memory: 0.06 MB
 ================================================================================
+
+Timing Statistics:
+  Total inference time: 5.3942 seconds
+  Tokens generated: 100
+  Time per token: 0.0539 seconds
+  Tokens per second: 18.54
+Memory Statistics:
+  Current process memory: 2023.39 MB
+  Python memory allocated: 0.04 MB
+================================================================================
+
+================================================================================
+OVERALL SUMMARY:
+  Memory before: 1678.84 MB
+  Memory after: 2023.50 MB
+  Memory increase: 344.66 MB
+  Peak Python memory: 0.08 MB
+================================================================================
