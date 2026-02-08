@@ -33,7 +33,7 @@ def benchmark_model(model, idx, num_tokens, model_name, seed=42):
     return total_time, time_per_token, output
 
 def main():
-    device = 'cuda'  # Change to 'cuda' if you have GPU
+    device = 'cpu'  # Change to 'cuda' if you have GPU
     
     print("="*80)
     print("KV Cache Speed Comparison")
@@ -41,8 +41,8 @@ def main():
     
     # Load both models
     print("\nLoading models...")
-    model_cached = GPT_Cached.from_pretrained('gpt2', dict(dropout=0.0))
-    model_original = GPT_Original.from_pretrained('gpt2', dict(dropout=0.0))
+    model_cached = GPT_Cached.from_pretrained('gpt2-xl', dict(dropout=0.0))
+    model_original = GPT_Original.from_pretrained('gpt2-xl', dict(dropout=0.0))
     
     model_cached.eval()
     model_original.eval()
@@ -87,11 +87,23 @@ def main():
         print(f"\n{'SPEEDUP:':<20} {speedup:.2f}x faster")
         print(f"{'Time saved:':<20} {time_orig - time_cached:.3f}s ({(1 - time_cached/time_orig)*100:.1f}%)")
         
-        # Verify outputs match (with same seed, they should!)
+        # Verify outputs match
         if torch.equal(out_orig, out_cached):
             print(f"{'Output match:':<20} ✅ Identical outputs")
         else:
-            print(f"{'Output match:':<20} ⚠️  Different outputs (check random seed)")
+            print(f"{'Output match:':<20} ⚠️  Different outputs")
+        
+        # Decode and print the outputs
+        print(f"\n{'Generated Text:':<20}")
+        print("-" * 80)
+        
+        # Decode original output
+        text_orig = enc.decode(out_orig[0].tolist())
+        print(f"Original:\n{text_orig}\n")
+        
+        # Decode cached output
+        text_cached = enc.decode(out_cached[0].tolist())
+        print(f"Cached:\n{text_cached}\n")
         
         results.append({
             'tokens': num_tokens,

@@ -1,0 +1,932 @@
+Loading model...
+loading weights from pretrained gpt: gpt2
+forcing vocab_size=50257, block_size=1024, bias=True
+overriding dropout rate to 0.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+number of parameters: 123.65M
+
+Prompt: 'Hello, how are you doing '
+Tokens: [15496, 11, 703, 389, 345, 1804, 220]
+
+================================================================================
+[GENERATE] Starting generation, max_new_tokens: 3
+[GENERATE] Initial prompt: torch.Size([1, 7])
+================================================================================
+
+[GENERATE] Iteration 1/3
+[GENERATE] curr_idx shape: torch.Size([1, 7])
+[GENERATE] past_kvs is None: True
+[GENERATE] Prefill: passing torch.Size([1, 7])
+
+[GPT FORWARD] idx shape: torch.Size([1, 7])
+[GPT FORWARD] current_size: 0, positions: [0, 1, 2, 3, 4, 5, 6]
+[GPT FORWARD] tok_emb min/max: -0.6675/1.7852
+[GPT FORWARD] pos_emb min/max: -4.5381/4.0653
+[GPT FORWARD] x after embed min/max: -4.4425/3.6828
+
+[GPT FORWARD] Processing block 0
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -4.4425/3.6828
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -9.9889/14.1734
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/14.1734
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -0.8484/1.2001
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -15.1570/16.4232
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -72.0172/103.9506
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -72.0172/103.9506
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -8.5644/5.2866
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/4.2924
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -3.4959/2.2497
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -71.6671/135.3118
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -71.6909/591.4415
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -71.6909/591.4415
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -9.1781/5.7435
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/2.1429
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.7523/1.8234
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -71.6865/591.4290
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -71.8295/2477.9844
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -71.8295/2477.9844
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -9.8955/5.7933
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/5.7933
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.5954/2.0389
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -71.9765/2475.2754
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -71.2155/2635.2837
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -71.2155/2635.2837
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -22.4370/11.9268
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/11.9081
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.7567/1.6473
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -71.2949/2634.3621
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -69.6661/2776.7241
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -69.6661/2776.7241
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -15.5654/6.1139
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/5.2590
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -2.2894/2.0913
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -69.7725/2775.3828
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -64.7483/2870.8267
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -64.7483/2870.8267
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -10.3421/7.7717
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/5.4540
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.2734/1.3629
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -64.9170/2871.5493
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -59.0872/2927.3713
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -59.0872/2927.3713
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -5.2502/7.1912
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/7.1912
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.6993/1.1095
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -59.3807/2927.9673
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -53.9603/2961.6206
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -53.9603/2961.6206
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -5.7809/6.2394
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/6.2394
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -2.1894/1.7621
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -54.0879/2963.3821
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -47.4535/2982.7170
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -47.4535/2982.7170
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -4.9901/5.2204
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/5.2204
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.6106/1.4799
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -47.3036/2984.1780
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -65.9336/2993.3542
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -65.9336/2993.3542
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -4.5429/5.6948
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/5.6948
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -2.1543/2.3028
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -81.0070/2994.3613
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -144.4049/2994.7817
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768]), min/max: -144.4049/2994.7817
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] curr_pos: 0
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64]), k shape: torch.Size([1, 12, 7, 64]), v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 7, 64]), full_v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] kv_len: 7, mask range: [0:7, :kv_len]
+[ATTENTION] att min/max before mask: -10.3763/6.3717
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -inf/6.3717
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -13.3350/13.3548
+[BLOCK] After attention, x shape: torch.Size([1, 7, 768]), min/max: -199.8828/443.8755
+[BLOCK] After MLP, x shape: torch.Size([1, 7, 768]), min/max: -223.4548/359.5339
+
+[GPT FORWARD] x after all blocks min/max: -61.8817/235.8787
+[GPT FORWARD] logits shape: torch.Size([1, 1, 50257]), min/max: -73.0586/-45.4181
+[GENERATE] Logits shape: torch.Size([1, 1, 50257])
+[GENERATE] Logits after temp, top 5 values: [-45.41813278198242, -47.8624153137207, -48.464881896972656, -48.83729553222656, -49.11518859863281]
+[GENERATE] Top 5 probs: torch.return_types.topk(
+values=tensor([0.6841, 0.0594, 0.0325, 0.0224, 0.0170]),
+indices=tensor([ 1701,  9805, 43634,  1849,   159]))
+[GENERATE] Sampled token: 1701
+
+[GENERATE] Iteration 2/3
+[GENERATE] curr_idx shape: torch.Size([1, 8])
+[GENERATE] past_kvs is None: False
+[GENERATE] Cached: passing only last token torch.Size([1, 1])
+[GENERATE] Cache size: 7
+
+[GPT FORWARD] idx shape: torch.Size([1, 1])
+[GPT FORWARD] current_size: 7, positions: [7]
+[GPT FORWARD] tok_emb min/max: -0.5563/0.5056
+[GPT FORWARD] pos_emb min/max: -1.1784/1.1816
+[GPT FORWARD] x after embed min/max: -1.1127/1.2335
+
+[GPT FORWARD] Processing block 0
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -1.1127/1.2335
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -4.7254/11.1475
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -4.7254/11.1475
+[ATTENTION] att min/max after softmax: 0.0000/0.9875
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -0.6902/0.9816
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -12.5674/10.7185
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -24.8424/27.5924
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -24.8424/27.5924
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -5.5946/1.5567
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -5.5946/1.5567
+[ATTENTION] att min/max after softmax: 0.0020/0.6758
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -2.2332/2.2175
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -22.7670/19.1819
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -24.0763/25.7741
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -24.0763/25.7741
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -7.2791/1.7479
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -7.2791/1.7479
+[ATTENTION] att min/max after softmax: 0.0028/0.7273
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.7876/1.7057
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -24.4320/27.0590
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -24.5705/27.4731
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -24.5705/27.4731
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -8.9873/4.9629
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -8.9873/4.9629
+[ATTENTION] att min/max after softmax: 0.0000/0.9472
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.4451/1.9157
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -24.7110/30.5531
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -24.8664/29.6020
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -24.8664/29.6020
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -11.9898/7.8229
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -11.9898/7.8229
+[ATTENTION] att min/max after softmax: 0.0000/0.9990
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.2166/1.6704
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -24.9005/28.8777
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -25.4101/35.2041
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -25.4101/35.2041
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -9.6011/4.0829
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -9.6011/4.0829
+[ATTENTION] att min/max after softmax: 0.0000/0.9981
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -2.2781/1.9165
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -25.4586/35.6795
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -25.5567/36.9199
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -25.5567/36.9199
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -7.4404/4.6126
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -7.4404/4.6126
+[ATTENTION] att min/max after softmax: 0.0000/0.9916
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.0040/1.3522
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -25.6139/37.1561
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -25.8825/44.0569
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -25.8825/44.0569
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -7.9942/6.1689
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -7.9942/6.1689
+[ATTENTION] att min/max after softmax: 0.0000/0.9940
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -0.6521/0.5110
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -25.9802/45.0541
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -26.5787/54.3142
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -26.5787/54.3142
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -6.8425/4.9866
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -6.8425/4.9866
+[ATTENTION] att min/max after softmax: 0.0003/0.9902
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -0.6314/0.8009
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -27.3243/54.6202
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -32.5265/59.0103
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -32.5265/59.0103
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -6.6763/4.0643
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -6.6763/4.0643
+[ATTENTION] att min/max after softmax: 0.0001/0.9771
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.5445/0.6759
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -35.3958/61.1957
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -59.0791/75.0040
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -59.0791/75.0040
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -5.9958/4.4965
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -5.9958/4.4965
+[ATTENTION] att min/max after softmax: 0.0002/0.9776
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.3825/1.0763
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -69.5364/80.7584
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -145.1789/147.5096
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -145.1789/147.5096
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 7
+[ATTENTION] past_k shape: torch.Size([1, 12, 7, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 8, 64]), full_v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 8])
+[ATTENTION] kv_len: 8, mask range: [7:8, :kv_len]
+[ATTENTION] att min/max before mask: -4.7977/4.3023
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -4.7977/4.3023
+[ATTENTION] att min/max after softmax: 0.0001/0.9452
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -2.5017/2.0001
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -200.8461/192.6792
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -220.8747/211.1587
+
+[GPT FORWARD] x after all blocks min/max: -13.1149/140.3866
+[GPT FORWARD] logits shape: torch.Size([1, 1, 50257]), min/max: -82.4881/-56.4824
+[GENERATE] Logits shape: torch.Size([1, 1, 50257])
+[GENERATE] Logits after temp, top 5 values: [-56.482391357421875, -58.963802337646484, -59.85997009277344, -60.03491973876953, -60.1191520690918]
+[GENERATE] Top 5 probs: torch.return_types.topk(
+values=tensor([0.5174, 0.0433, 0.0177, 0.0148, 0.0136]),
+indices=tensor([198, 366, 628, 314, 383]))
+[GENERATE] Sampled token: 1375
+
+[GENERATE] Iteration 3/3
+[GENERATE] curr_idx shape: torch.Size([1, 9])
+[GENERATE] past_kvs is None: False
+[GENERATE] Cached: passing only last token torch.Size([1, 1])
+[GENERATE] Cache size: 8
+
+[GPT FORWARD] idx shape: torch.Size([1, 1])
+[GPT FORWARD] current_size: 8, positions: [8]
+[GPT FORWARD] tok_emb min/max: -0.3272/0.3463
+[GPT FORWARD] pos_emb min/max: -1.1591/1.1466
+[GPT FORWARD] x after embed min/max: -1.1125/1.0618
+
+[GPT FORWARD] Processing block 0
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -1.1125/1.0618
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -6.1210/10.8273
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -6.1210/10.8273
+[ATTENTION] att min/max after softmax: 0.0000/0.9979
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -0.7846/1.0472
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -13.5227/10.9159
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -25.3417/26.0164
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -25.3417/26.0164
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -5.7219/3.6382
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -5.7219/3.6382
+[ATTENTION] att min/max after softmax: 0.0014/0.7882
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -2.1576/2.3437
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -24.1509/19.7523
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -25.5464/23.6356
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -25.5464/23.6356
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -9.9424/1.9160
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -9.9424/1.9160
+[ATTENTION] att min/max after softmax: 0.0007/0.7850
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -2.0292/1.8425
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -25.8525/25.9962
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -26.1166/27.9688
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -26.1166/27.9688
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -13.1769/5.7533
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -13.1769/5.7533
+[ATTENTION] att min/max after softmax: 0.0000/0.9124
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.5580/2.1581
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -26.2564/29.4108
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -26.2961/35.4166
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -26.2961/35.4166
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -13.1029/8.7276
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -13.1029/8.7276
+[ATTENTION] att min/max after softmax: 0.0000/0.9998
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.8325/0.7870
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -26.3746/34.7193
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -26.5423/35.9835
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -26.5423/35.9835
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -11.5044/3.7291
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -11.5044/3.7291
+[ATTENTION] att min/max after softmax: 0.0000/0.9987
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -2.2820/1.9476
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -26.5859/34.6652
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -26.6066/40.8498
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -26.6066/40.8498
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -7.3128/4.2096
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -7.3128/4.2096
+[ATTENTION] att min/max after softmax: 0.0001/0.9975
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -0.9490/1.3516
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -26.6992/42.3681
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -29.0135/50.0012
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -29.0135/50.0012
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -6.8637/5.8869
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -6.8637/5.8869
+[ATTENTION] att min/max after softmax: 0.0000/0.9941
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.0390/1.1692
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -28.9516/52.0728
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -30.4698/54.4167
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -30.4698/54.4167
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -7.7196/4.5263
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -7.7196/4.5263
+[ATTENTION] att min/max after softmax: 0.0003/0.9740
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.0773/0.8164
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -33.3318/56.5691
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -39.8984/62.2789
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -39.8984/62.2789
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -5.8250/5.2722
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -5.8250/5.2722
+[ATTENTION] att min/max after softmax: 0.0003/0.9899
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.0954/1.2485
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -45.3402/65.5961
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -60.1030/69.2076
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -60.1030/69.2076
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -6.5322/5.5307
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -6.5322/5.5307
+[ATTENTION] att min/max after softmax: 0.0002/0.9795
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -1.0626/1.0913
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -73.2353/76.9938
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -90.8046/88.9297
+
+[BLOCK] Input x shape: torch.Size([1, 1, 768]), min/max: -90.8046/88.9297
+
+[ATTENTION] Input shape: torch.Size([1, 1, 768])
+[ATTENTION] curr_pos: 8
+[ATTENTION] past_k shape: torch.Size([1, 12, 8, 64])
+Sabki ma ki chut
+[ATTENTION] q shape: torch.Size([1, 12, 1, 64]), k shape: torch.Size([1, 12, 1, 64]), v shape: torch.Size([1, 12, 1, 64])
+[ATTENTION] full_k shape: torch.Size([1, 12, 9, 64]), full_v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 1, 9])
+[ATTENTION] kv_len: 9, mask range: [8:9, :kv_len]
+[ATTENTION] att min/max before mask: -3.7940/6.9778
+[ATTENTION] Causal Attention Mask used: 
+tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] Complete attention mask!
+[ATTENTION] att min/max after mask: -3.7940/6.9778
+[ATTENTION] att min/max after softmax: 0.0000/0.9841
+[ATTENTION] Output y shape: torch.Size([1, 1, 768])
+[ATTENTION] Output y min/max: -2.4167/3.4305
+[BLOCK] After attention, x shape: torch.Size([1, 1, 768]), min/max: -133.1170/177.6189
+[BLOCK] After MLP, x shape: torch.Size([1, 1, 768]), min/max: -155.3828/233.3070
+
+[GPT FORWARD] x after all blocks min/max: -39.0414/235.7340
+[GPT FORWARD] logits shape: torch.Size([1, 1, 50257]), min/max: -147.7525/-112.0026
+[GENERATE] Logits shape: torch.Size([1, 1, 50257])
+[GENERATE] Logits after temp, top 5 values: [-112.00261688232422, -113.02926635742188, -113.49446868896484, -114.05565643310547, -114.26881408691406]
+[GENERATE] Top 5 probs: torch.return_types.topk(
+values=tensor([0.1963, 0.0703, 0.0442, 0.0252, 0.0204]),
+indices=tensor([ 1965,   531,  3114,   373, 13541]))
+[GENERATE] Sampled token: 655
+
+================================================================================
+Final output: Hello, how are you doing ?" She just
+================================================================================
+
+
+
+Timing Statistics:
+  Total inference time: 23.4740 seconds
+  Tokens generated: 100
+  Time per token: 0.2347 seconds
+  Tokens per second: 4.26
+Memory Statistics:
+  Current process memory: 6943.95 MB
+  Python memory allocated: 0.03 MB
+
+  ================================================================================
+OVERALL SUMMARY:
+  Memory before: 6809.95 MB
+  Memory after: 6947.70 MB
+  Memory increase: 137.75 MB
+  Peak Python memory: 0.06 MB
+================================================================================

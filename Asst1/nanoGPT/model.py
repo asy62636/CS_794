@@ -42,12 +42,15 @@ class CausalSelfAttention(nn.Module):
         self.n_embd = config.n_embd
         self.dropout = config.dropout
         # flash attention make GPU go brrrrr but support is only in PyTorch >= 2.0
-        self.flash = hasattr(torch.nn.functional, 'scaled_dot_product_attention')
+        # self.flash = hasattr(torch.nn.functional, 'scaled_dot_product_attention')
+        self.flash = None
         if not self.flash:
             print("WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0")
             # causal mask to ensure that attention is only applied to the left in the input sequence
             self.register_buffer("bias", torch.tril(torch.ones(config.block_size, config.block_size))
                                         .view(1, 1, config.block_size, config.block_size))
+            
+        self.debug = False
 
     def forward(self, x, past_kv):
         B, T, C = x.size() # batch size, sequence length, embedding dimensionality (n_embd)
@@ -60,11 +63,21 @@ class CausalSelfAttention(nn.Module):
         if past_k is not None:
             curr_pos = past_k.size()[2]
 
+        if self.debug:
+            print(f"\n[ATTENTION] Input shape: {x.shape}")
+            print(f"[ATTENTION] curr_pos: {curr_pos}")
+            if past_k is not None:
+                print(f"[ATTENTION] past_k shape: {past_k.shape}")
+
         # calculate query, key, values for all heads in batch and move head forward to be the batch dim
         q, k, v  = self.c_attn(x).split(self.n_embd, dim=2)
         k = k.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
         q = q.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
         v = v.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
+        # print("Sabki ma ki chut")
+        if self.debug:
+            print(f"[ATTENTION] q shape: {q.shape}, k shape: {k.shape}, v shape: {v.shape}")
+        
         if past_k is not None:
             full_k = torch.cat((past_k, k), dim = 2)
         else:
@@ -74,7 +87,11 @@ class CausalSelfAttention(nn.Module):
             full_v = torch.cat((past_v, v), dim = 2)
         else:
             full_v = v
-        # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T') -> (B, nh, T, T') where T' = past_k.shape[3] + T
+        
+        if self.debug:
+            print(f"[ATTENTION] full_k shape: {full_k.shape}, full_v shape: {full_v.shape}")
+        
+        # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T') -> (B, nh, T, T')
         if self.flash:
             # efficient attention using Flash Attention CUDA kernels
             y = torch.nn.functional.scaled_dot_product_attention(q, full_k, full_v, attn_mask=None, dropout_p=self.dropout if self.training else 0, is_causal=True)
@@ -82,11 +99,38 @@ class CausalSelfAttention(nn.Module):
             # manual implementation of attention
             att = (q @ full_k.transpose(-2, -1)) * (1.0 / math.sqrt(k.size(-1))) #shape = [B, nh, T, T']
             kv_len = full_k.size()[2]
+            
+            if self.debug:
+                print(f"[ATTENTION] att shape before mask: {att.shape}")
+                print(f"[ATTENTION] kv_len: {kv_len}, mask range: [{curr_pos}:{curr_pos+T}, :kv_len]")
+                print(f"[ATTENTION] att min/max before mask: {att.min():.4f}/{att.max():.4f}")
+            
             att = att.masked_fill(self.bias[:,:,curr_pos:curr_pos + T,:kv_len] == 0, float('-inf'))
+            if self.debug:
+                print("[ATTENTION] Causal Attention Mask used: ")
+                print(self.bias[:,:,curr_pos:curr_pos + T,:kv_len])
+                print("[ATTENTION] Complete attention mask!")
+            if self.debug:
+                print(f"[ATTENTION] att min/max after mask: {att.min():.4f}/{att.max():.4f}")
+                # Check for NaN
+                if torch.isnan(att).any():
+                    print("[ATTENTION] ⚠️ NaN detected in attention scores!")
+            
             att = F.softmax(att, dim=-1)
+            
+            if self.debug:
+                print(f"[ATTENTION] att min/max after softmax: {att.min():.4f}/{att.max():.4f}")
+                if torch.isnan(att).any():
+                    print("[ATTENTION] ⚠️ NaN detected after softmax!")
+            
             att = self.attn_dropout(att)
             y = att @ full_v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
+        
         y = y.transpose(1, 2).contiguous().view(B, T, C) # re-assemble all head outputs side by side
+
+        if self.debug:
+            print(f"[ATTENTION] Output y shape: {y.shape}")
+            print(f"[ATTENTION] Output y min/max: {y.min():.4f}/{y.max():.4f}")
 
         # output projection
         y = self.resid_dropout(self.c_proj(y))
@@ -117,12 +161,23 @@ class Block(nn.Module):
         self.attn = CausalSelfAttention(config)
         self.ln_2 = LayerNorm(config.n_embd, bias=config.bias)
         self.mlp = MLP(config)
+        self.debug = False
 
     def forward(self, x, past_kv):
-        # x = x + self.attn(self.ln_1(x))
+        if self.debug:
+            print(f"\n[BLOCK] Input x shape: {x.shape}, min/max: {x.min():.4f}/{x.max():.4f}")
+        
         attn_op, present_kv = self.attn(self.ln_1(x), past_kv)
         x = x + attn_op
+        
+        if self.debug:
+            print(f"[BLOCK] After attention, x shape: {x.shape}, min/max: {x.min():.4f}/{x.max():.4f}")
+        
         x = x + self.mlp(self.ln_2(x))
+        
+        if self.debug:
+            print(f"[BLOCK] After MLP, x shape: {x.shape}, min/max: {x.min():.4f}/{x.max():.4f}")
+        
         return x, present_kv
 
 @dataclass
@@ -166,6 +221,7 @@ class GPT(nn.Module):
 
         # report number of parameters
         print("number of parameters: %.2fM" % (self.get_num_params()/1e6,))
+        self.debug = False
 
     def get_num_params(self, non_embedding=True):
         """
@@ -195,18 +251,42 @@ class GPT(nn.Module):
         if past_kvs is not None:
             current_size = past_kvs[0][0].shape[2]
 
-        pos = torch.arange(current_size, current_size + t, dtype=torch.long, device=device) # shape (t)
+        pos = torch.arange(current_size, current_size + t, dtype=torch.long, device=device)
+
+        if self.debug:
+            print(f"\n[GPT FORWARD] idx shape: {idx.shape}")
+            print(f"[GPT FORWARD] current_size: {current_size}, positions: {pos.tolist()}")
 
         # forward the GPT model itself
         tok_emb = self.transformer.wte(idx) # token embeddings of shape (b, t, n_embd)
         pos_emb = self.transformer.wpe(pos) # position embeddings of shape (t, n_embd)
         x = self.transformer.drop(tok_emb + pos_emb)
+        
+        if self.debug:
+            print(f"[GPT FORWARD] tok_emb min/max: {tok_emb.min():.4f}/{tok_emb.max():.4f}")
+            print(f"[GPT FORWARD] pos_emb min/max: {pos_emb.min():.4f}/{pos_emb.max():.4f}")
+            print(f"[GPT FORWARD] x after embed min/max: {x.min():.4f}/{x.max():.4f}")
+        
         present_kvs = []
         for i, block in enumerate(self.transformer.h):
             past_kv = past_kvs[i] if past_kvs is not None else None
+            
+            if self.debug and i == 0:  # Only debug first block to avoid spam
+                print(f"\n[GPT FORWARD] Processing block {i}")
+                block.debug = True
+                block.attn.debug = True
+            
             x, present_kv = block(x, past_kv)
             present_kvs.append(present_kv)
+            
+            if self.debug and i == 0:
+                block.debug = False
+                block.attn.debug = False
+        
         x = self.transformer.ln_f(x)
+
+        if self.debug:
+            print(f"\n[GPT FORWARD] x after all blocks min/max: {x.min():.4f}/{x.max():.4f}")
 
         if targets is not None:
             # if we are given some desired targets also calculate the loss
@@ -214,8 +294,11 @@ class GPT(nn.Module):
             loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1)
         else:
             # inference-time mini-optimization: only forward the lm_head on the very last position
-            logits = self.lm_head(x[:, [-1], :]) # note: using list [-1] to preserve the time dim
+            logits = self.lm_head(x[:, [-1], :])
             loss = None
+
+        if self.debug:
+            print(f"[GPT FORWARD] logits shape: {logits.shape}, min/max: {logits.min():.4f}/{logits.max():.4f}")
 
         return logits, loss, present_kvs
 
@@ -338,28 +421,63 @@ class GPT(nn.Module):
         """
         past_kvs = None
         curr_idx = idx if idx.size(1) <= self.config.block_size else idx[:, -self.config.block_size:]
-        for _ in range(max_new_tokens):
-            # if the sequence context is growing too long we must crop it at block_size
-            # idx_cond = idx if idx.size(1) <= self.config.block_size else idx[:, -self.config.block_size:]
-
+        
+        if self.debug:
+            print(f"\n{'='*80}")
+            print(f"[GENERATE] Starting generation, max_new_tokens: {max_new_tokens}")
+            print(f"[GENERATE] Initial prompt: {curr_idx.shape}")
+            print(f"{'='*80}")
+        
+        for iteration in range(max_new_tokens):
+            if self.debug:
+                print(f"\n[GENERATE] Iteration {iteration + 1}/{max_new_tokens}")
+                print(f"[GENERATE] curr_idx shape: {curr_idx.shape}")
+                print(f"[GENERATE] past_kvs is None: {past_kvs is None}")
+            
             if past_kvs is None:
                 idx_input = curr_idx if curr_idx.size(1) <= self.config.block_size else curr_idx[:, -self.config.block_size:]
+                if self.debug:
+                    print(f"[GENERATE] Prefill: passing {idx_input.shape}")
             else:
                 idx_input = curr_idx[:, [-1]]
+                if self.debug:
+                    print(f"[GENERATE] Cached: passing only last token {idx_input.shape}")
+                    print(f"[GENERATE] Cache size: {past_kvs[0][0].shape[2]}")
+            
             if (past_kvs is not None and past_kvs[0][0].size()[2] >= self.config.block_size):
-                past_kvs = [(k_cache[:, :, -self.config.block_size + 1:, :], v_cache[:, :, -self.config.block_size + 1:, :]) for (k_cache, v_cache) in past_kvs]
+                if self.debug:
+                    print(f"[GENERATE] Truncating cache from {past_kvs[0][0].size()[2]} to {self.config.block_size - 1}")
+                past_kvs = [(k_cache[:, :, -(self.config.block_size - 1):, :], v_cache[:, :, -(self.config.block_size - 1):, :]) for (k_cache, v_cache) in past_kvs]
+            
             # forward the model to get the logits for the index in the sequence
             logits, _, past_kvs = self(idx_input, past_kvs)
+            
+            if self.debug:
+                print(f"[GENERATE] Logits shape: {logits.shape}")
+            
             # pluck the logits at the final step and scale by desired temperature
             logits = logits[:, -1, :] / temperature
+            
+            if self.debug:
+                print(f"[GENERATE] Logits after temp, top 5 values: {logits[0].topk(5).values.tolist()}")
+            
             # optionally crop the logits to only the top k options
             if top_k is not None:
                 v, _ = torch.topk(logits, min(top_k, logits.size(-1)))
                 logits[logits < v[:, [-1]]] = -float('Inf')
+            
             # apply softmax to convert logits to (normalized) probabilities
             probs = F.softmax(logits, dim=-1)
+            
+            if self.debug:
+                print(f"[GENERATE] Top 5 probs: {probs[0].topk(5)}")
+            
             # sample from the distribution
             idx_next = torch.multinomial(probs, num_samples=1)
+            
+            if self.debug:
+                print(f"[GENERATE] Sampled token: {idx_next[0].item()}")
+            
             # append sampled index to the running sequence and continue
             curr_idx = torch.cat((curr_idx, idx_next), dim=1)
 

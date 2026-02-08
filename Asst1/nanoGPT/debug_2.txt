@@ -1,0 +1,995 @@
+Loading model...
+loading weights from pretrained gpt: gpt2
+forcing vocab_size=50257, block_size=1024, bias=True
+overriding dropout rate to 0.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0
+number of parameters: 123.65M
+
+Prompt: 'Hello, how are you doing '
+Tokens: [15496, 11, 703, 389, 345, 1804, 220]
+
+[GPT FORWARD] idx shape: torch.Size([1, 7])
+[GPT FORWARD] positions: [0, 1, 2, 3, 4, 5, 6]
+[GPT FORWARD] tok_emb min/max: -0.6675/1.7852
+[GPT FORWARD] pos_emb min/max: -4.5381/4.0653
+[GPT FORWARD] x after embed min/max: -4.4425/3.6828
+
+[GPT FORWARD] Processing block 0
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -4.4425/3.6828
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -9.9889/14.1734
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/14.1734
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -0.8484/1.2001
+[BLOCK] After attention min/max: -15.1570/16.4232
+[BLOCK] After MLP min/max: -72.0172/103.9506
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -72.0172/103.9506
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -8.5644/5.2866
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/4.2924
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -3.4959/2.2497
+[BLOCK] After attention min/max: -71.6671/135.3118
+[BLOCK] After MLP min/max: -71.6909/591.4415
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -71.6909/591.4415
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -9.1781/5.7435
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/2.1429
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.7523/1.8234
+[BLOCK] After attention min/max: -71.6865/591.4290
+[BLOCK] After MLP min/max: -71.8295/2477.9844
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -71.8295/2477.9844
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -9.8955/5.7933
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.7933
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.5954/2.0389
+[BLOCK] After attention min/max: -71.9765/2475.2754
+[BLOCK] After MLP min/max: -71.2155/2635.2837
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -71.2155/2635.2837
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -22.4370/11.9268
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/11.9081
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.7567/1.6473
+[BLOCK] After attention min/max: -71.2949/2634.3621
+[BLOCK] After MLP min/max: -69.6661/2776.7241
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -69.6661/2776.7241
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -15.5654/6.1139
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.2590
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -2.2894/2.0913
+[BLOCK] After attention min/max: -69.7725/2775.3828
+[BLOCK] After MLP min/max: -64.7483/2870.8267
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -64.7483/2870.8267
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -10.3421/7.7717
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.4540
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.2734/1.3629
+[BLOCK] After attention min/max: -64.9170/2871.5493
+[BLOCK] After MLP min/max: -59.0872/2927.3713
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -59.0872/2927.3713
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -5.2502/7.1912
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/7.1912
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.6993/1.1095
+[BLOCK] After attention min/max: -59.3807/2927.9673
+[BLOCK] After MLP min/max: -53.9603/2961.6206
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -53.9603/2961.6206
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -5.7809/6.2394
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/6.2394
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -2.1894/1.7621
+[BLOCK] After attention min/max: -54.0879/2963.3821
+[BLOCK] After MLP min/max: -47.4535/2982.7170
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -47.4535/2982.7170
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -4.9901/5.2204
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.2204
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -1.6106/1.4799
+[BLOCK] After attention min/max: -47.3036/2984.1780
+[BLOCK] After MLP min/max: -65.9336/2993.3542
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -65.9336/2993.3542
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -4.5429/5.6948
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.6948
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -2.1543/2.3028
+[BLOCK] After attention min/max: -81.0070/2994.3613
+[BLOCK] After MLP min/max: -144.4049/2994.7817
+
+[BLOCK] Input x shape: torch.Size([1, 7, 768])
+[BLOCK] Input min/max: -144.4049/2994.7817
+
+[ATTENTION] Input shape: torch.Size([1, 7, 768])
+[ATTENTION] B=1, T=7, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 7, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 7, 7])
+[ATTENTION] att min/max before mask: -10.3763/6.3717
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/6.3717
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 7, 768])
+[ATTENTION] Output y min/max: -13.3350/13.3548
+[BLOCK] After attention min/max: -199.8828/443.8755
+[BLOCK] After MLP min/max: -223.4548/359.5339
+[GPT FORWARD] x after all blocks min/max: -61.8817/235.8787
+[GPT FORWARD] logits shape: torch.Size([1, 1, 50257])
+[GPT FORWARD] logits min/max: -73.0586/-45.4181
+
+[GPT FORWARD] idx shape: torch.Size([1, 8])
+[GPT FORWARD] positions: [0, 1, 2, 3, 4, 5, 6, 7]
+[GPT FORWARD] tok_emb min/max: -0.6675/1.7852
+[GPT FORWARD] pos_emb min/max: -4.5381/4.0653
+[GPT FORWARD] x after embed min/max: -4.4425/3.6828
+
+[GPT FORWARD] Processing block 0
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -4.4425/3.6828
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -9.9889/14.1734
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/14.1734
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -0.8484/1.2001
+[BLOCK] After attention min/max: -15.1570/16.4232
+[BLOCK] After MLP min/max: -72.0172/103.9506
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -72.0172/103.9506
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -8.5644/5.2866
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/4.2924
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -3.4959/2.2497
+[BLOCK] After attention min/max: -71.6671/135.3118
+[BLOCK] After MLP min/max: -71.6909/591.4415
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -71.6909/591.4415
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -9.1782/5.7435
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/2.1429
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -1.7876/1.8234
+[BLOCK] After attention min/max: -71.6865/591.4290
+[BLOCK] After MLP min/max: -71.8295/2477.9844
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -71.8295/2477.9844
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -9.8955/5.7933
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.7933
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -1.5954/2.0389
+[BLOCK] After attention min/max: -71.9765/2475.2754
+[BLOCK] After MLP min/max: -71.2155/2635.2837
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -71.2155/2635.2837
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -22.4369/11.9268
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/11.9081
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -1.7567/1.6704
+[BLOCK] After attention min/max: -71.2949/2634.3621
+[BLOCK] After MLP min/max: -69.6661/2776.7241
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -69.6661/2776.7241
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -15.5654/6.1139
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.2590
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -2.2894/2.0913
+[BLOCK] After attention min/max: -69.7725/2775.3828
+[BLOCK] After MLP min/max: -64.7483/2870.8267
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -64.7483/2870.8267
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -10.3421/8.8520
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.4540
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -1.2734/1.3629
+[BLOCK] After attention min/max: -64.9170/2871.5493
+[BLOCK] After MLP min/max: -59.0872/2927.3713
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -59.0872/2927.3713
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -7.9942/7.1912
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/7.1912
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -1.6993/1.1095
+[BLOCK] After attention min/max: -59.3807/2927.9673
+[BLOCK] After MLP min/max: -53.9603/2961.6206
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -53.9603/2961.6206
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -6.8425/6.2394
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/6.2394
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -2.1894/1.7621
+[BLOCK] After attention min/max: -54.0879/2963.3821
+[BLOCK] After MLP min/max: -47.4535/2982.7170
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -47.4535/2982.7170
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -6.6763/5.2204
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.2204
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -1.6106/1.4799
+[BLOCK] After attention min/max: -47.3036/2984.1780
+[BLOCK] After MLP min/max: -65.9336/2993.3542
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -65.9336/2993.3542
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -5.9958/5.6948
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.6948
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -2.1543/2.3028
+[BLOCK] After attention min/max: -81.0071/2994.3613
+[BLOCK] After MLP min/max: -145.1790/2994.7817
+
+[BLOCK] Input x shape: torch.Size([1, 8, 768])
+[BLOCK] Input min/max: -145.1790/2994.7817
+
+[ATTENTION] Input shape: torch.Size([1, 8, 768])
+[ATTENTION] B=1, T=8, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 8, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 8, 8])
+[ATTENTION] att min/max before mask: -10.3763/6.3717
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/6.3717
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 8, 768])
+[ATTENTION] Output y min/max: -13.3350/13.3548
+[BLOCK] After attention min/max: -200.8462/443.8755
+[BLOCK] After MLP min/max: -223.4548/359.5339
+[GPT FORWARD] x after all blocks min/max: -61.8817/235.8787
+[GPT FORWARD] logits shape: torch.Size([1, 1, 50257])
+[GPT FORWARD] logits min/max: -82.4881/-56.4824
+
+[GPT FORWARD] idx shape: torch.Size([1, 9])
+[GPT FORWARD] positions: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+[GPT FORWARD] tok_emb min/max: -0.6675/1.7852
+[GPT FORWARD] pos_emb min/max: -4.5381/4.0653
+[GPT FORWARD] x after embed min/max: -4.4425/3.6828
+
+[GPT FORWARD] Processing block 0
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -4.4425/3.6828
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -11.7489/14.1734
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/14.1734
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -0.8484/1.2318
+[BLOCK] After attention min/max: -15.1570/16.4232
+[BLOCK] After MLP min/max: -72.0172/103.9506
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -72.0172/103.9506
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -8.5644/8.6238
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/4.2924
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -3.4959/2.2699
+[BLOCK] After attention min/max: -71.6671/135.3118
+[BLOCK] After MLP min/max: -71.6909/591.4415
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -71.6909/591.4415
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -9.5874/5.7435
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/2.1429
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -2.1040/1.8234
+[BLOCK] After attention min/max: -71.6865/591.4290
+[BLOCK] After MLP min/max: -71.8295/2477.9844
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -71.8295/2477.9844
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -11.1682/5.7933
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.7933
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -1.7598/2.3806
+[BLOCK] After attention min/max: -71.9765/2475.2754
+[BLOCK] After MLP min/max: -71.2155/2635.2837
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -71.2155/2635.2837
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -22.4369/14.2439
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/14.2439
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -1.8254/1.6704
+[BLOCK] After attention min/max: -71.2949/2634.3621
+[BLOCK] After MLP min/max: -69.6661/2776.7241
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -69.6661/2776.7241
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -15.5654/6.1139
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.2590
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -2.2894/2.0913
+[BLOCK] After attention min/max: -69.7725/2775.3828
+[BLOCK] After MLP min/max: -64.7483/2870.8267
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -64.7483/2870.8267
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -10.3421/8.8520
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.4540
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -1.2734/1.3629
+[BLOCK] After attention min/max: -64.9170/2871.5493
+[BLOCK] After MLP min/max: -59.0872/2927.3713
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -59.0872/2927.3713
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -9.4594/7.1912
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/7.1912
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -1.6993/1.1095
+[BLOCK] After attention min/max: -59.3807/2927.9673
+[BLOCK] After MLP min/max: -53.9603/2961.6206
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -53.9603/2961.6206
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -7.6067/6.2394
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/6.2394
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -2.1894/1.7621
+[BLOCK] After attention min/max: -54.0879/2963.3821
+[BLOCK] After MLP min/max: -47.4535/2982.7170
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -47.4535/2982.7170
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -8.4005/5.2204
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.2204
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -1.6106/1.4799
+[BLOCK] After attention min/max: -47.3036/2984.1780
+[BLOCK] After MLP min/max: -65.9336/2993.3542
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -65.9336/2993.3542
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -5.9958/5.6948
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/5.6948
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -2.1543/2.3028
+[BLOCK] After attention min/max: -81.0071/2994.3613
+[BLOCK] After MLP min/max: -145.1790/2994.7817
+
+[BLOCK] Input x shape: torch.Size([1, 9, 768])
+[BLOCK] Input min/max: -145.1790/2994.7817
+
+[ATTENTION] Input shape: torch.Size([1, 9, 768])
+[ATTENTION] B=1, T=9, C=768
+[ATTENTION] q shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] k shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] v shape: torch.Size([1, 12, 9, 64])
+[ATTENTION] att shape before mask: torch.Size([1, 12, 9, 9])
+[ATTENTION] att min/max before mask: -10.3763/7.0655
+[ATTENTION] Causal mask slice:
+tensor([[[[1., 0., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 0., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 0., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 0., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 0., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 0., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 0., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 0.],
+          [1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+[ATTENTION] att min/max after mask: -inf/7.0655
+[ATTENTION] att min/max after softmax: 0.0000/1.0000
+[ATTENTION] Output y shape: torch.Size([1, 9, 768])
+[ATTENTION] Output y min/max: -13.3350/13.3548
+[BLOCK] After attention min/max: -200.8462/443.8755
+[BLOCK] After MLP min/max: -223.4548/359.5339
+[GPT FORWARD] x after all blocks min/max: -61.8817/235.8787
+[GPT FORWARD] logits shape: torch.Size([1, 1, 50257])
+[GPT FORWARD] logits min/max: -102.3519/-58.7377
+
+================================================================================
+Final output: Hello, how are you doing ?"
+
+
+================================================================================
