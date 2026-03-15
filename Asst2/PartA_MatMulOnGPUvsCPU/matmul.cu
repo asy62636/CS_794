@@ -7,7 +7,8 @@
 #include <ctime>
 #include <cublas_v2.h>
 
-#define BLOCK_SIZE 30
+#define BLOCK_SIZE 32
+#define STRIDE 4
 
 void initMat(float* A, float* B, float* C, int matrixSize){
     for (int i = 0; i < matrixSize; i++){
@@ -105,11 +106,92 @@ __global__ void RowBasedTiling(float* A, float* B, float* C, int N){
     int bx = blockIdx.x;
     int by = blockIdx.y;
 
-    // int row = ty + by * BLOCK_SIZE;
-    // for (int m = 0; m < cuda::ceil_div(N, BLOCK_SIZE); m++){
-    //     int col = 
-    // }
-    return;
+    int row = ty + by * BLOCK_SIZE;
+    int col = tx + bx * BLOCK_SIZE * STRIDE;
+
+    __shared__ float sharedA[BLOCK_SIZE][BLOCK_SIZE];
+    __shared__ float sharedB[BLOCK_SIZE][BLOCK_SIZE * STRIDE];
+
+    float sumS[STRIDE] = {0.0f};
+
+    for (int m = 0; m < cuda::ceil_div(N, BLOCK_SIZE); m++){
+        int rowA = row;
+        int colA = (m * BLOCK_SIZE + tx);
+        if (rowA < N && colA < N){
+            sharedA[ty][tx] = A[rowA * N + colA];
+        }
+        else{
+            sharedA[ty][tx] = 0.0;
+        }
+        for (int s = 0; s < STRIDE; s++){
+            int rowB = m * BLOCK_SIZE + ty;
+            int colB = col + s * BLOCK_SIZE;
+            if (rowB < N && colB < N){
+                sharedB[ty][tx + s * BLOCK_SIZE] = B[rowB * N + colB];
+            }
+            else{
+                sharedB[ty][tx + s * BLOCK_SIZE] = 0.0;
+            }
+        }
+        __syncthreads();
+        for (int k = 0; k < BLOCK_SIZE; k++){
+            for (int s = 0; s < STRIDE; s++){
+                sumS[s] += sharedA[ty][k] * sharedB[k][tx + s * BLOCK_SIZE];
+            }
+        }
+        __syncthreads();
+    }
+    for (int s = 0; s < STRIDE; s++){
+        if (row < N && col + s * BLOCK_SIZE < N) C[row * N + col + s * BLOCK_SIZE] = sumS[s];
+    }
+}
+
+__global__ void colBasedTiling(float* A, float* B, float* C, int N){
+    int tx = threadIdx.x;
+    int ty = threadIdx.y;
+    int bx = blockIdx.x;
+    int by = blockIdx.y;
+
+    int row = ty + by * BLOCK_SIZE * STRIDE;
+    int col = tx + bx * BLOCK_SIZE;
+
+    __shared__ float sharedA[BLOCK_SIZE * STRIDE][BLOCK_SIZE];
+    __shared__ float sharedB[BLOCK_SIZE][BLOCK_SIZE];
+
+    float sumS[STRIDE] = {0.0f};
+
+    for (int m = 0; m < cuda::ceil_div(N, BLOCK_SIZE); m++){
+        for (int s = 0; s < STRIDE; s++){
+            int rowA = row + s * BLOCK_SIZE;
+            int colA = tx + m * BLOCK_SIZE;
+            if (rowA < N && colA < N){
+                sharedA[ty + s * BLOCK_SIZE][tx] = A[rowA * N + colA];
+            }
+            else{
+                sharedA[ty + s * BLOCK_SIZE][tx] = 0.0;
+            }
+        }
+        int rowB = ty + m * BLOCK_SIZE;
+        int colB = col;
+        if (rowB < N && colB < N){
+            sharedB[ty][tx] = B[rowB * N + colB];
+        }
+        else{
+            sharedB[ty][tx] = 0.0;
+        }
+        __syncthreads();
+        for (int k = 0; k < BLOCK_SIZE; k++){
+            for (int s = 0; s < STRIDE; s++){
+                sumS[s] += sharedA[ty + s * BLOCK_SIZE][k] * sharedB[k][tx];
+            }
+        }
+        __syncthreads();
+    }
+    for (int s = 0; s < STRIDE; s++){
+        int r = row + s * BLOCK_SIZE;
+        int c = col;
+        if (r < N && c < N) C[r * N + c] = sumS[s];
+    }
 }
 
 void combinedFuncCall(int N){
@@ -132,7 +214,8 @@ void combinedFuncCall(int N){
     cudaEvent_t start1, stop1;
     dim3 threads(BLOCK_SIZE, BLOCK_SIZE, 1);
     dim3 blocks(cuda::ceil_div(N, BLOCK_SIZE), cuda::ceil_div(N, BLOCK_SIZE), 1);
-
+    dim3 rowBasedBlocks(cuda::ceil_div(N, BLOCK_SIZE * STRIDE),cuda::ceil_div(N, BLOCK_SIZE), 1);
+    dim3 colBasedBlocks(cuda::ceil_div(N, BLOCK_SIZE), cuda::ceil_div(N, BLOCK_SIZE * STRIDE), 1);
     float* C = nullptr;
     cudaMallocManaged(&C, matSize * sizeof(float));
     cudaEventCreate(&start1);
@@ -230,16 +313,71 @@ void combinedFuncCall(int N){
     cudaEventElapsedTime(&time4, start4, stop4);
     printf("Time taken for kernel 4 (for N = %i)= %f \n", N, time4);
     cudaFree(C_tiling);
-    float total_time = time1 + time2 + time3 + time4;
-    printf("Total time taken for the four kernels (for N = %i) = %f \n", N, total_time);
+
+    //RowBasedTilingKernel
+    cudaEvent_t start5, stop5;
+    float* C_Row_tiling = nullptr;
+    cudaMallocManaged(&C_Row_tiling, matSize * sizeof(float));
+    cudaEventCreate(&start5);
+    cudaEventCreate(&stop5);
+    cudaEventRecord(start5);
+    RowBasedTiling<<<rowBasedBlocks, threads>>>(A, B, C_Row_tiling, N);
+    cudaDeviceSynchronize();
+    cudaError_t err5 = cudaGetLastError();
+    if (err5 != cudaSuccess) {
+        printf("5th Kernel launch failed: %s\n", cudaGetErrorString(err5));
+    }
+    cudaEventRecord(stop5);
+    cudaEventSynchronize(stop5);
+    // if (compareResults(C_Row_tiling, refResult, matSize)){
+    //     printf("[SUCCESS] correct ROW tiling code written\n");
+    // }
+    // else{
+    //     printf("[ERROR] Incorrect ROW code written\n");
+    // }
+    float time5 = 0.0;
+    cudaEventElapsedTime(&time5, start5, stop5);
+    printf("Time taken for kernel 5 (for N = %i)= %f \n", N, time5);
+    cudaFree(C_Row_tiling);
+
+    //ColBasedTilingKernel
+    cudaEvent_t start6, stop6;
+    float* C_Col_tiling = nullptr;
+    cudaMallocManaged(&C_Col_tiling, matSize * sizeof(float));
+    cudaEventCreate(&start6);
+    cudaEventCreate(&stop6);
+    cudaEventRecord(start6);
+    colBasedTiling<<<colBasedBlocks, threads>>>(A, B, C_Col_tiling, N);
+    cudaDeviceSynchronize();
+    cudaError_t err6 = cudaGetLastError();
+    if (err6 != cudaSuccess) {
+        printf("6th Kernel launch failed: %s\n", cudaGetErrorString(err6));
+    }
+    cudaEventRecord(stop6);
+    cudaEventSynchronize(stop6);
+    // if (compareResults(C_Col_tiling, refResult, matSize)){
+    //     printf("[SUCCESS] correct COL tiling code written\n");
+    // }
+    // else{
+    //     printf("[ERROR] Incorrect COL code written\n");
+    // }
+    float time6 = 0.0;
+    cudaEventElapsedTime(&time6, start6, stop6);
+    printf("Time taken for kernel 6 (for N = %i)= %f \n", N, time6);
+    cudaFree(C_Col_tiling);
+
+    float total_time = time1 + time2 + time3 + time4 + time5 + time6;
+    printf("Total time taken for the six kernels (for N = %i) = %f \n", N, total_time);
 
     double flops = 2.0 * N * N * N;
     float tflops1 = (flops / (time1 / 1000.0)) / 1e12;
     float tflops2 = (flops / (time2 / 1000.0)) / 1e12;
     float tflops3 = (flops / (time3 / 1000.0)) / 1e12;
     float tflops4 = (flops / (time4 / 1000.0)) / 1e12;
+    float tflops5 = (flops / (time5 / 1000.0)) / 1e12;
+    float tflops6 = (flops / (time6 / 1000.0)) / 1e12;
 
-    printf("CSV,%d,%f,%f,%f,%f,%f,%f, %f\n", N, time1, time2, time3, tflops1, tflops2, tflops3, tflops4);
+    printf("CSV,%d,%f,%f,%f,%f,%f,%f, %f, %f, %f\n", N, time1, time2, time3, tflops1, tflops2, tflops3, tflops4, tflops5, tflops6);
     printf("\n");
     // cudaFree(C_cublas);
     // cudaFree(C_coalesced);
@@ -256,6 +394,10 @@ void combinedFuncCall(int N){
     cudaEventDestroy(stop3);
     cudaEventDestroy(start4);
     cudaEventDestroy(stop4);
+    cudaEventDestroy(start5);
+    cudaEventDestroy(stop5);
+    cudaEventDestroy(start6);
+    cudaEventDestroy(stop6);
     return;
 }
 

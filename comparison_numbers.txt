@@ -1,0 +1,21 @@
+With block size 32:
+Time taken for Naive kernel (for N = 8192)= 9204.495117, TFLOPS = 0.119454
+Time taken for Coalesced kernel (for N = 8192)= 1472.082886, TFLOPS = 0.746909
+Time taken for cublasSgemm kernel (for N = 8192)= 175.907837, TFLOPS = 6.250498
+Time taken for Simple tiling (for N = 8192)= 1115.420532, TFLOPS = 0.985737
+
+=================================================================================
+With block size 48:
+Time taken for Naive kernel (for N = 8192)= 0.009216, TFLOPS = 119304.640625
+Time taken for Coalesced kernel (for N = 8192)= 0.005120, TFLOPS = 214748.375000
+Time taken for cublasSgemm kernel (for N = 8192)= 185.691803, TFLOPS = 5.921164
+Time taken for Simple tiling (for N = 8192)= 0.002048, TFLOPS = 536870.937500
+
+=================================================================================
+With block size 64:
+Time taken for Naive kernel (for N = 8192)= 0.008192, TFLOPS = 134217.734375
+Time taken for Coalesced kernel (for N = 8192)= 0.004960, TFLOPS = 221675.734375
+Time taken for cublasSgemm kernel (for N = 8192)= 184.893127, TFLOPS = 5.946742
+Time taken for Simple tiling (for N = 8192)= 0.001024, TFLOPS = 1073741.875000
+
+=================================================================================
