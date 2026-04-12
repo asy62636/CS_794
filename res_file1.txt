@@ -1,0 +1,112 @@
+Input initialised 
+Total Memory before assignment = 7808.06 MB 
+Used Memory before assignment = 556.88 MB 
+Free Memory before assignment  = 7251.19 MB 
+Weights initialised 
+Total Memory after allotment = 7808.06 MB 
+Used Memory after allotment = 730.56 MB 
+Free Memory after allotment = 7077.50 MB 
+Loss in Epoch 0 = 0.97 | Time = 41.64 ms |F_time = 10.57 | B_time = 31.07 
+Loss in Epoch 1 = 0.96 | Time = 41.99 ms |F_time = 10.44 | B_time = 31.55 
+Loss in Epoch 2 = 0.96 | Time = 41.87 ms |F_time = 11.25 | B_time = 30.62 
+Loss in Epoch 3 = 0.96 | Time = 34.18 ms |F_time = 10.18 | B_time = 24.00 
+Loss in Epoch 4 = 0.95 | Time = 30.85 ms |F_time = 7.59 | B_time = 23.26 
+Loss in Epoch 5 = 0.95 | Time = 31.24 ms |F_time = 7.62 | B_time = 23.63 
+Loss in Epoch 6 = 0.95 | Time = 30.59 ms |F_time = 7.78 | B_time = 22.82 
+Loss in Epoch 7 = 0.95 | Time = 30.26 ms |F_time = 8.18 | B_time = 22.09 
+Loss in Epoch 8 = 0.94 | Time = 31.70 ms |F_time = 8.63 | B_time = 23.06 
+Loss in Epoch 9 = 0.94 | Time = 31.47 ms |F_time = 8.62 | B_time = 22.85 
+Loss in Epoch 10 = 0.94 | Time = 31.97 ms |F_time = 8.63 | B_time = 23.33 
+Loss in Epoch 11 = 0.93 | Time = 31.22 ms |F_time = 7.82 | B_time = 23.39 
+Loss in Epoch 12 = 0.93 | Time = 31.20 ms |F_time = 7.59 | B_time = 23.61 
+Loss in Epoch 13 = 0.93 | Time = 31.25 ms |F_time = 7.81 | B_time = 23.44 
+Loss in Epoch 14 = 0.93 | Time = 30.62 ms |F_time = 7.85 | B_time = 22.76 
+Loss in Epoch 15 = 0.92 | Time = 30.94 ms |F_time = 8.20 | B_time = 22.74 
+Loss in Epoch 16 = 0.92 | Time = 31.82 ms |F_time = 8.84 | B_time = 22.99 
+Loss in Epoch 17 = 0.92 | Time = 31.24 ms |F_time = 8.49 | B_time = 22.75 
+Loss in Epoch 18 = 0.92 | Time = 31.16 ms |F_time = 8.40 | B_time = 22.76 
+Loss in Epoch 19 = 0.91 | Time = 31.44 ms |F_time = 7.84 | B_time = 23.60 
+Loss in Epoch 20 = 0.91 | Time = 31.19 ms |F_time = 7.62 | B_time = 23.56 
+Loss in Epoch 21 = 0.91 | Time = 30.47 ms |F_time = 7.65 | B_time = 22.82 
+Loss in Epoch 22 = 0.91 | Time = 31.12 ms |F_time = 8.18 | B_time = 22.94 
+Loss in Epoch 23 = 0.90 | Time = 31.20 ms |F_time = 8.46 | B_time = 22.74 
+Loss in Epoch 24 = 0.90 | Time = 31.58 ms |F_time = 8.68 | B_time = 22.90 
+Loss in Epoch 25 = 0.90 | Time = 31.21 ms |F_time = 8.58 | B_time = 22.62 
+Loss in Epoch 26 = 0.90 | Time = 31.92 ms |F_time = 8.49 | B_time = 23.43 
+Loss in Epoch 27 = 0.89 | Time = 31.31 ms |F_time = 7.85 | B_time = 23.46 
+Loss in Epoch 28 = 0.89 | Time = 31.31 ms |F_time = 7.59 | B_time = 23.72 
+Loss in Epoch 29 = 0.89 | Time = 31.05 ms |F_time = 7.69 | B_time = 23.36 
+Loss in Epoch 30 = 0.89 | Time = 30.51 ms |F_time = 7.90 | B_time = 22.61 
+Loss in Epoch 31 = 0.89 | Time = 31.27 ms |F_time = 8.29 | B_time = 22.99 
+Loss in Epoch 32 = 0.88 | Time = 32.32 ms |F_time = 8.88 | B_time = 23.44 
+Loss in Epoch 33 = 0.88 | Time = 33.32 ms |F_time = 9.21 | B_time = 24.10 
+Loss in Epoch 34 = 0.88 | Time = 32.46 ms |F_time = 9.01 | B_time = 23.45 
+Loss in Epoch 35 = 0.88 | Time = 31.91 ms |F_time = 8.60 | B_time = 23.31 
+Loss in Epoch 36 = 0.87 | Time = 32.09 ms |F_time = 8.56 | B_time = 23.52 
+Loss in Epoch 37 = 0.87 | Time = 32.51 ms |F_time = 8.68 | B_time = 23.84 
+Loss in Epoch 38 = 0.87 | Time = 32.27 ms |F_time = 8.30 | B_time = 23.97 
+Loss in Epoch 39 = 0.87 | Time = 31.88 ms |F_time = 7.75 | B_time = 24.13 
+Loss in Epoch 40 = 0.87 | Time = 31.58 ms |F_time = 7.71 | B_time = 23.87 
+Loss in Epoch 41 = 0.86 | Time = 31.61 ms |F_time = 7.69 | B_time = 23.92 
+Loss in Epoch 42 = 0.86 | Time = 30.92 ms |F_time = 7.98 | B_time = 22.94 
+Loss in Epoch 43 = 0.86 | Time = 31.56 ms |F_time = 8.48 | B_time = 23.08 
+Loss in Epoch 44 = 0.86 | Time = 31.52 ms |F_time = 8.78 | B_time = 22.74 
+Loss in Epoch 45 = 0.86 | Time = 31.32 ms |F_time = 8.53 | B_time = 22.79 
+Loss in Epoch 46 = 0.85 | Time = 31.38 ms |F_time = 8.36 | B_time = 23.02 
+Loss in Epoch 47 = 0.85 | Time = 31.97 ms |F_time = 8.25 | B_time = 23.72 
+Loss in Epoch 48 = 0.85 | Time = 31.53 ms |F_time = 7.75 | B_time = 23.78 
+Loss in Epoch 49 = 0.85 | Time = 31.64 ms |F_time = 7.68 | B_time = 23.96 
+Loss in Epoch 50 = 0.85 | Time = 31.45 ms |F_time = 7.68 | B_time = 23.76 
+Loss in Epoch 51 = 0.84 | Time = 31.40 ms |F_time = 8.62 | B_time = 22.79 
+Loss in Epoch 52 = 0.84 | Time = 31.43 ms |F_time = 8.43 | B_time = 23.00 
+Loss in Epoch 53 = 0.84 | Time = 31.11 ms |F_time = 8.49 | B_time = 22.62 
+Loss in Epoch 54 = 0.84 | Time = 32.09 ms |F_time = 9.01 | B_time = 23.08 
+Loss in Epoch 55 = 0.84 | Time = 31.34 ms |F_time = 8.40 | B_time = 22.93 
+Loss in Epoch 56 = 0.83 | Time = 31.34 ms |F_time = 8.42 | B_time = 22.91 
+Loss in Epoch 57 = 0.83 | Time = 31.54 ms |F_time = 7.85 | B_time = 23.69 
+Loss in Epoch 58 = 0.83 | Time = 31.26 ms |F_time = 7.63 | B_time = 23.64 
+Loss in Epoch 59 = 0.83 | Time = 30.88 ms |F_time = 7.65 | B_time = 23.23 
+Loss in Epoch 60 = 0.83 | Time = 30.42 ms |F_time = 7.93 | B_time = 22.50 
+Loss in Epoch 61 = 0.83 | Time = 31.73 ms |F_time = 8.43 | B_time = 23.31 
+Loss in Epoch 62 = 0.82 | Time = 30.47 ms |F_time = 7.76 | B_time = 22.70 
+Loss in Epoch 63 = 0.82 | Time = 32.53 ms |F_time = 8.65 | B_time = 23.88 
+Loss in Epoch 64 = 0.82 | Time = 31.04 ms |F_time = 7.96 | B_time = 23.08 
+Loss in Epoch 65 = 0.82 | Time = 31.64 ms |F_time = 8.28 | B_time = 23.35 
+Loss in Epoch 66 = 0.82 | Time = 32.42 ms |F_time = 7.80 | B_time = 24.62 
+Loss in Epoch 67 = 0.82 | Time = 31.19 ms |F_time = 7.84 | B_time = 23.35 
+Loss in Epoch 68 = 0.81 | Time = 30.64 ms |F_time = 7.91 | B_time = 22.73 
+Loss in Epoch 69 = 0.81 | Time = 31.06 ms |F_time = 8.33 | B_time = 22.73 
+Loss in Epoch 70 = 0.81 | Time = 31.10 ms |F_time = 8.75 | B_time = 22.35 
+Loss in Epoch 71 = 0.81 | Time = 31.20 ms |F_time = 8.72 | B_time = 22.49 
+Loss in Epoch 72 = 0.81 | Time = 31.62 ms |F_time = 8.46 | B_time = 23.16 
+Loss in Epoch 73 = 0.81 | Time = 30.03 ms |F_time = 7.67 | B_time = 22.36 
+Loss in Epoch 74 = 0.80 | Time = 31.02 ms |F_time = 7.68 | B_time = 23.34 
+Loss in Epoch 75 = 0.80 | Time = 30.38 ms |F_time = 7.68 | B_time = 22.69 
+Loss in Epoch 76 = 0.80 | Time = 30.60 ms |F_time = 8.26 | B_time = 22.35 
+Loss in Epoch 77 = 0.80 | Time = 31.64 ms |F_time = 8.59 | B_time = 23.05 
+Loss in Epoch 78 = 0.80 | Time = 29.86 ms |F_time = 7.59 | B_time = 22.27 
+Loss in Epoch 79 = 0.80 | Time = 32.07 ms |F_time = 8.53 | B_time = 23.54 
+Loss in Epoch 80 = 0.80 | Time = 30.02 ms |F_time = 7.62 | B_time = 22.40 
+Loss in Epoch 81 = 0.79 | Time = 30.99 ms |F_time = 7.77 | B_time = 23.22 
+Loss in Epoch 82 = 0.79 | Time = 30.21 ms |F_time = 7.85 | B_time = 22.36 
+Loss in Epoch 83 = 0.79 | Time = 31.47 ms |F_time = 8.49 | B_time = 22.97 
+Loss in Epoch 84 = 0.79 | Time = 29.96 ms |F_time = 7.64 | B_time = 22.31 
+Loss in Epoch 85 = 0.79 | Time = 31.71 ms |F_time = 8.42 | B_time = 23.29 
+Loss in Epoch 86 = 0.79 | Time = 29.84 ms |F_time = 7.62 | B_time = 22.22 
+Loss in Epoch 87 = 0.79 | Time = 31.31 ms |F_time = 7.62 | B_time = 23.69 
+Loss in Epoch 88 = 0.78 | Time = 31.35 ms |F_time = 7.69 | B_time = 23.66 
+Loss in Epoch 89 = 0.78 | Time = 30.87 ms |F_time = 7.91 | B_time = 22.96 
+Loss in Epoch 90 = 0.78 | Time = 31.59 ms |F_time = 8.96 | B_time = 22.64 
+Loss in Epoch 91 = 0.78 | Time = 31.89 ms |F_time = 8.74 | B_time = 23.15 
+Loss in Epoch 92 = 0.78 | Time = 31.86 ms |F_time = 8.83 | B_time = 23.03 
+Loss in Epoch 93 = 0.78 | Time = 31.83 ms |F_time = 8.43 | B_time = 23.40 
+Loss in Epoch 94 = 0.78 | Time = 30.79 ms |F_time = 7.66 | B_time = 23.13 
+Loss in Epoch 95 = 0.77 | Time = 30.60 ms |F_time = 7.86 | B_time = 22.74 
+Loss in Epoch 96 = 0.77 | Time = 31.71 ms |F_time = 7.78 | B_time = 23.93 
+Loss in Epoch 97 = 0.77 | Time = 31.21 ms |F_time = 8.23 | B_time = 22.98 
+Loss in Epoch 98 = 0.77 | Time = 31.39 ms |F_time = 8.42 | B_time = 22.97 
+Loss in Epoch 99 = 0.77 | Time = 32.13 ms |F_time = 8.93 | B_time = 23.20 
+Average time per iteration = 31.66 ms
+Average forward time per iteration = 8.27 ms
+Average backward time per iteration = 23.39 ms
+Memory used = 173.69 MB 
