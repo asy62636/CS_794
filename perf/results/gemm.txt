@@ -1,0 +1,82 @@
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU | SMs: 24 | CC 8.9 | 7808 MB
+CSV,device,NVIDIA GeForce RTX 4060 Laptop GPU,24,8.9,7808
+CSV,header,kernel,N,iters,avg_ms,min_ms,tflops,pct_of_cublas,rel_err_vs_cublas,status
+kernel run-time watchdog: ON (long runs will be skipped)
+N= 1024 cublas_sgemm     avg      0.347 ms  min      0.340 ms    6.196 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,1024,10,0.3466,0.3400,6.1958,100.00,0.000e+00,PASS
+N= 1024 k1_naive         avg     23.979 ms  min     18.164 ms    0.090 TFLOPS     1.4% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k1_naive,1024,10,23.9794,18.1637,0.0896,1.45,1.752e-06,PASS
+N= 1024 k2_coalesced     avg      2.222 ms  min      2.160 ms    0.967 TFLOPS    15.6% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k2_coalesced,1024,10,2.2217,2.1596,0.9666,15.60,1.752e-06,PASS
+N= 1024 k3_smem_tiling   avg      1.711 ms  min      1.701 ms    1.255 TFLOPS    20.3% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k3_smem_tiling,1024,10,1.7112,1.7009,1.2550,20.26,1.752e-06,PASS
+N= 1024 k4_row_coarsen   avg      1.334 ms  min      1.323 ms    1.610 TFLOPS    26.0% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k4_row_coarsen,1024,10,1.3339,1.3230,1.6100,25.99,1.752e-06,PASS
+N= 1024 k5_col_coarsen   avg      0.728 ms  min      0.715 ms    2.949 TFLOPS    47.6% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k5_col_coarsen,1024,10,0.7282,0.7149,2.9492,47.60,1.752e-06,PASS
+N= 1024 k6_reg_block_2d  avg      0.446 ms  min      0.438 ms    4.811 TFLOPS    77.6% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k6_reg_block_2d,1024,10,0.4464,0.4383,4.8106,77.64,1.752e-06,PASS
+N= 1024 k7_vectorized    avg      0.366 ms  min      0.363 ms    5.875 TFLOPS    94.8% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k7_vectorized,1024,10,0.3656,0.3634,5.8745,94.82,1.752e-06,PASS
+N= 2048 cublas_sgemm     avg      2.571 ms  min      2.402 ms    6.682 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,2048,10,2.5711,2.4023,6.6820,100.00,0.000e+00,PASS
+N= 2048 k1_naive         avg    146.063 ms  min    145.353 ms    0.118 TFLOPS     1.8% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k1_naive,2048,10,146.0632,145.3527,0.1176,1.76,0.000e+00,PASS
+N= 2048 k2_coalesced     avg     25.369 ms  min     22.038 ms    0.677 TFLOPS    10.1% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k2_coalesced,2048,10,25.3695,22.0375,0.6772,10.13,0.000e+00,PASS
+N= 2048 k3_smem_tiling   avg     17.965 ms  min     17.061 ms    0.956 TFLOPS    14.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k3_smem_tiling,2048,10,17.9649,17.0609,0.9563,14.31,0.000e+00,PASS
+N= 2048 k4_row_coarsen   avg     13.804 ms  min     13.269 ms    1.245 TFLOPS    18.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k4_row_coarsen,2048,10,13.8037,13.2690,1.2446,18.63,0.000e+00,PASS
+N= 2048 k5_col_coarsen   avg      8.368 ms  min      7.239 ms    2.053 TFLOPS    30.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k5_col_coarsen,2048,10,8.3676,7.2387,2.0531,30.73,0.000e+00,PASS
+N= 2048 k6_reg_block_2d  avg      3.711 ms  min      3.405 ms    4.630 TFLOPS    69.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,2048,10,3.7109,3.4048,4.6296,69.28,0.000e+00,PASS
+N= 2048 k7_vectorized    avg      3.713 ms  min      3.474 ms    4.627 TFLOPS    69.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,2048,10,3.7126,3.4744,4.6274,69.25,0.000e+00,PASS
+N= 4096 cublas_sgemm     avg     34.273 ms  min     32.906 ms    4.010 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,4096,10,34.2735,32.9062,4.0101,100.00,0.000e+00,PASS
+N= 4096 k1_naive         avg   1249.308 ms  min   1246.542 ms    0.110 TFLOPS     2.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k1_naive,4096,10,1249.3080,1246.5419,0.1100,2.74,0.000e+00,PASS
+N= 4096 k2_coalesced     avg    246.756 ms  min    237.232 ms    0.557 TFLOPS    13.9% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k2_coalesced,4096,10,246.7564,237.2321,0.5570,13.89,0.000e+00,PASS
+N= 4096 k3_smem_tiling   avg    168.425 ms  min    166.400 ms    0.816 TFLOPS    20.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k3_smem_tiling,4096,10,168.4251,166.4000,0.8160,20.35,0.000e+00,PASS
+N= 4096 k4_row_coarsen   avg    119.691 ms  min    118.000 ms    1.148 TFLOPS    28.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k4_row_coarsen,4096,10,119.6905,117.9996,1.1483,28.64,0.000e+00,PASS
+N= 4096 k5_col_coarsen   avg     73.211 ms  min     71.906 ms    1.877 TFLOPS    46.8% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k5_col_coarsen,4096,10,73.2105,71.9063,1.8773,46.81,0.000e+00,PASS
+N= 4096 k6_reg_block_2d  avg     37.116 ms  min     36.398 ms    3.703 TFLOPS    92.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,4096,10,37.1159,36.3981,3.7030,92.34,0.000e+00,PASS
+N= 4096 k7_vectorized    avg     33.694 ms  min     33.079 ms    4.079 TFLOPS   101.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,4096,10,33.6941,33.0793,4.0790,101.72,0.000e+00,PASS
+N= 8192 cublas_sgemm     avg    253.000 ms  min    249.772 ms    4.346 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,8192,10,253.0003,249.7720,4.3459,100.00,0.000e+00,PASS
+N= 8192 k1_naive         skipped: predicted 10.0 s per launch exceeds the display watchdog
+CSV,gemm,k1_naive,8192,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N= 8192 k2_coalesced     avg   1925.995 ms  min   1922.290 ms    0.571 TFLOPS    13.1% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k2_coalesced,8192,10,1925.9946,1922.2897,0.5709,13.14,0.000e+00,PASS
+N= 8192 k3_smem_tiling   avg   1350.466 ms  min   1347.631 ms    0.814 TFLOPS    18.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k3_smem_tiling,8192,10,1350.4658,1347.6311,0.8142,18.73,0.000e+00,PASS
+N= 8192 k4_row_coarsen   avg    951.358 ms  min    947.928 ms    1.156 TFLOPS    26.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k4_row_coarsen,8192,10,951.3577,947.9280,1.1557,26.59,0.000e+00,PASS
+N= 8192 k5_col_coarsen   avg    583.741 ms  min    577.564 ms    1.884 TFLOPS    43.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k5_col_coarsen,8192,10,583.7412,577.5637,1.8836,43.34,0.000e+00,PASS
+N= 8192 k6_reg_block_2d  avg    289.929 ms  min    280.675 ms    3.792 TFLOPS    87.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,8192,10,289.9288,280.6753,3.7924,87.26,0.000e+00,PASS
+N= 8192 k7_vectorized    avg    257.711 ms  min    256.284 ms    4.266 TFLOPS    98.2% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,8192,10,257.7113,256.2837,4.2664,98.17,0.000e+00,PASS
+N=16384 cublas_sgemm     avg   1992.386 ms  min   1959.477 ms    4.415 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,16384,10,1992.3865,1959.4773,4.4149,100.00,0.000e+00,PASS
+CSV,gemm,k1_naive,16384,0,nan,nan,nan,nan,nan,SKIPPED
+CSV,gemm,k2_coalesced,16384,0,nan,nan,nan,nan,nan,SKIPPED
+N=16384 k3_smem_tiling   skipped: predicted 10.8 s per launch exceeds the display watchdog
+CSV,gemm,k3_smem_tiling,16384,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N=16384 k4_row_coarsen   skipped: predicted 7.6 s per launch exceeds the display watchdog
+CSV,gemm,k4_row_coarsen,16384,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N=16384 k5_col_coarsen   skipped: predicted 4.7 s per launch exceeds the display watchdog
+CSV,gemm,k5_col_coarsen,16384,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N=16384 k6_reg_block_2d  avg   2256.191 ms  min   2248.586 ms    3.899 TFLOPS    88.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,16384,10,2256.1910,2248.5862,3.8986,88.31,0.000e+00,PASS
+N=16384 k7_vectorized    avg   2084.249 ms  min   2069.600 ms    4.220 TFLOPS    95.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,16384,10,2084.2491,2069.6003,4.2203,95.59,0.000e+00,PASS

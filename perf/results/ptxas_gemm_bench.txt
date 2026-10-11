@@ -1,0 +1,46 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z12max_abs_diffPKfS0_mPiS1_' for 'sm_89'
+ptxas info    : Function properties for _Z12max_abs_diffPKfS0_mPiS1_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 15 registers, used 0 barriers, 392 bytes cmem[0]
+ptxas info    : Compile time = 3.337 ms
+ptxas info    : Compiling entry function '_Z12init_uniformPfmj' for 'sm_89'
+ptxas info    : Function properties for _Z12init_uniformPfmj
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 10 registers, used 0 barriers, 372 bytes cmem[0]
+ptxas info    : Compile time = 0.940 ms
+ptxas info    : Compiling entry function '_Z16sgemm_vectorizediPKfS0_Pf' for 'sm_89'
+ptxas info    : Function properties for _Z16sgemm_vectorizediPKfS0_Pf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 127 registers, used 1 barriers, 8192 bytes smem, 384 bytes cmem[0]
+ptxas info    : Compile time = 32.221 ms
+ptxas info    : Compiling entry function '_Z18sgemm_reg_block_2diPKfS0_Pf' for 'sm_89'
+ptxas info    : Function properties for _Z18sgemm_reg_block_2diPKfS0_Pf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 128 registers, used 1 barriers, 8192 bytes smem, 384 bytes cmem[0]
+ptxas info    : Compile time = 32.402 ms
+ptxas info    : Compiling entry function '_Z14colBasedTilingPfS_S_i' for 'sm_89'
+ptxas info    : Function properties for _Z14colBasedTilingPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 44 registers, used 1 barriers, 20480 bytes smem, 380 bytes cmem[0]
+ptxas info    : Compile time = 4.963 ms
+ptxas info    : Compiling entry function '_Z14RowBasedTilingPfS_S_i' for 'sm_89'
+ptxas info    : Function properties for _Z14RowBasedTilingPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 39 registers, used 1 barriers, 20480 bytes smem, 380 bytes cmem[0]
+ptxas info    : Compile time = 4.278 ms
+ptxas info    : Compiling entry function '_Z12simpleTilingPfS_S_i' for 'sm_89'
+ptxas info    : Function properties for _Z12simpleTilingPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 1 barriers, 8192 bytes smem, 380 bytes cmem[0]
+ptxas info    : Compile time = 3.723 ms
+ptxas info    : Compiling entry function '_Z24MatMulGPUCoalescedAccessPfS_S_i' for 'sm_89'
+ptxas info    : Function properties for _Z24MatMulGPUCoalescedAccessPfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 380 bytes cmem[0]
+ptxas info    : Compile time = 4.367 ms
+ptxas info    : Compiling entry function '_Z14MatMulGPUNaivePfS_S_i' for 'sm_89'
+ptxas info    : Function properties for _Z14MatMulGPUNaivePfS_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 0 barriers, 380 bytes cmem[0]
+ptxas info    : Compile time = 4.317 ms

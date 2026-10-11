@@ -1,0 +1,31 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z8flash_v3I6__halfEvPKT_S3_S3_Pfif' for 'sm_89'
+ptxas info    : Function properties for _Z8flash_v3I6__halfEvPKT_S3_S3_Pfif
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 205 registers, used 1 barriers, 33024 bytes smem, 392 bytes cmem[0]
+ptxas info    : Compile time = 425.245 ms
+ptxas info    : Compiling entry function '_Z8flash_v3IfEvPKT_S2_S2_Pfif' for 'sm_89'
+ptxas info    : Function properties for _Z8flash_v3IfEvPKT_S2_S2_Pfif
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 205 registers, used 1 barriers, 33024 bytes smem, 392 bytes cmem[0]
+ptxas info    : Compile time = 262.680 ms
+ptxas info    : Compiling entry function '_Z4fillPfmf' for 'sm_89'
+ptxas info    : Function properties for _Z4fillPfmf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 8 registers, used 0 barriers, 372 bytes cmem[0]
+ptxas info    : Compile time = 0.793 ms
+ptxas info    : Compiling entry function '_Z11init_normalPfP6__halfmj' for 'sm_89'
+ptxas info    : Function properties for _Z11init_normalPfP6__halfmj
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, used 0 barriers, 380 bytes cmem[0]
+ptxas info    : Compile time = 14.069 ms
+ptxas info    : Compiling entry function '_Z8flash_v2PKfS0_S0_PfS1_S1_i' for 'sm_89'
+ptxas info    : Function properties for _Z8flash_v2PKfS0_S0_PfS1_S1_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 62 registers, used 1 barriers, 37504 bytes smem, 404 bytes cmem[0]
+ptxas info    : Compile time = 20.357 ms
+ptxas info    : Compiling entry function '_Z8flash_v1PfS_S_S_S_S_i' for 'sm_89'
+ptxas info    : Function properties for _Z8flash_v1PfS_S_S_S_S_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 64 registers, used 1 barriers, 28672 bytes smem, 404 bytes cmem[0]
+ptxas info    : Compile time = 22.171 ms

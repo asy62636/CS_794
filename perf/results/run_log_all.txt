@@ -1,0 +1,286 @@
+=== Sunday 11 October 2026 12:50:34 PM IST | target: all ===
+=== environment ===
+Sun Oct 11 12:50:34 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 4060 ...    Off |   00000000:01:00.0  On |                  N/A |
+| N/A   42C    P8              3W /   35W |     404MiB /   8188MiB |      5%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            2052      G   /usr/lib/xorg/Xorg                      108MiB |
+|    0   N/A  N/A            2205      G   /usr/bin/gnome-shell                    216MiB |
+|    0   N/A  N/A            2987      G   ...1010-030034.818000-production         31MiB |
+|    0   N/A  N/A            4316      G   gnome-control-center                      2MiB |
++-----------------------------------------------------------------------------------------+
+name, driver_version, compute_cap, memory.total [MiB], clocks.max.sm [MHz], clocks.max.memory [MHz], power.limit [W], pstate, temperature.gpu
+NVIDIA GeForce RTX 4060 Laptop GPU, 570.124.06, 8.9, 8188 MiB, 3105 MHz, 8001 MHz, [N/A], P3, 42
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+torch 2.6.0+cu124 | cuda 12.4 | available True
+=== compiling for sm_89 ===
+Compiling entry function '_Z8flash_v3I6__halfEvPKT_S3_S3_Pfif' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 205 registers, used 1 barriers, 33024 bytes smem, 392 bytes cmem[0]
+Compiling entry function '_Z8flash_v3IfEvPKT_S2_S2_Pfif' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 205 registers, used 1 barriers, 33024 bytes smem, 392 bytes cmem[0]
+Compiling entry function '_Z4fillPfmf' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 8 registers, used 0 barriers, 372 bytes cmem[0]
+Compiling entry function '_Z11init_normalPfP6__halfmj' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 14 registers, used 0 barriers, 380 bytes cmem[0]
+Compiling entry function '_Z8flash_v2PKfS0_S0_PfS1_S1_i' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 62 registers, used 1 barriers, 37504 bytes smem, 404 bytes cmem[0]
+Compiling entry function '_Z8flash_v1PfS_S_S_S_S_i' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 64 registers, used 1 barriers, 28672 bytes smem, 404 bytes cmem[0]
+built flash_attn_bench
+=== FlashAttention: CUDA kernels v1/v2/v3/v3h (takes a few minutes) ===
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU | SMs: 24 | CC 8.9 | 7808 MB | smem/block 49152 B
+CSV,device,NVIDIA GeForce RTX 4060 Laptop GPU,24,8.9,7808
+kernel run-time watchdog: ON (long runs will be skipped)
+CSV,header,kernel,in_dtype,N,iters,avg_ms,min_ms,tflops,max_err_vs_fp64,max_diff_vs_v3,extra_state_MB,status
+N=   32 v3   avg      0.092 ms  min      0.076 ms    0.365 TFLOPS  err 4.80e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,32,10,0.0919,0.0758,0.3653,4.798e-07,0.000e+00,0.000,PASS
+N=   32 v3h  avg      0.077 ms  min      0.076 ms    0.436 TFLOPS  err 4.80e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,32,10,0.0770,0.0758,0.4359,4.798e-07,0.000e+00,0.000,PASS
+N=   32 v2   avg      0.108 ms  min      0.108 ms    0.311 TFLOPS  err 3.63e-07  diff_v3 1.16e-06  PASS
+CSV,flash,v2,fp32,32,10,0.1079,0.1075,0.3108,3.628e-07,1.162e-06,0.031,PASS
+N=   32 v1   avg      0.138 ms  min      0.136 ms    0.244 TFLOPS  err 3.63e-07  diff_v3 1.16e-06  PASS
+CSV,flash,v1,fp32,32,10,0.1377,0.1362,0.2437,3.628e-07,1.162e-06,0.031,PASS
+N=   64 v3   avg      0.084 ms  min      0.080 ms    1.604 TFLOPS  err 5.22e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,64,10,0.0837,0.0799,1.6043,5.222e-07,0.000e+00,0.000,PASS
+N=   64 v3h  avg      0.082 ms  min      0.081 ms    1.647 TFLOPS  err 5.22e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,64,10,0.0815,0.0809,1.6466,5.222e-07,0.000e+00,0.000,PASS
+N=   64 v2   avg      0.404 ms  min      0.402 ms    0.332 TFLOPS  err 4.24e-07  diff_v3 1.19e-06  PASS
+CSV,flash,v2,fp32,64,10,0.4039,0.4024,0.3323,4.239e-07,1.192e-06,0.062,PASS
+N=   64 v1   avg      0.489 ms  min      0.482 ms    0.274 TFLOPS  err 4.41e-07  diff_v3 1.31e-06  PASS
+CSV,flash,v1,fp32,64,10,0.4892,0.4823,0.2744,4.407e-07,1.311e-06,0.062,PASS
+N=  128 v3   avg      0.276 ms  min      0.273 ms    1.948 TFLOPS  err 4.53e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,128,10,0.2756,0.2726,1.9481,4.531e-07,0.000e+00,0.000,PASS
+N=  128 v3h  avg      0.273 ms  min      0.271 ms    1.965 TFLOPS  err 4.53e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,128,10,0.2732,0.2714,1.9651,4.531e-07,0.000e+00,0.000,PASS
+N=  128 v2   avg      1.577 ms  min      1.564 ms    0.340 TFLOPS  err 7.09e-07  diff_v3 1.67e-06  PASS
+CSV,flash,v2,fp32,128,10,1.5773,1.5636,0.3404,7.092e-07,1.669e-06,0.125,PASS
+N=  128 v1   avg      1.913 ms  min      1.903 ms    0.281 TFLOPS  err 6.20e-07  diff_v3 1.67e-06  PASS
+CSV,flash,v1,fp32,128,10,1.9129,1.9026,0.2807,6.198e-07,1.669e-06,0.125,PASS
+N=  256 v3   avg      1.050 ms  min      1.033 ms    2.044 TFLOPS  err 9.75e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,256,10,1.0504,1.0332,2.0444,9.753e-07,0.000e+00,0.000,PASS
+N=  256 v3h  avg      1.027 ms  min      1.010 ms    2.090 TFLOPS  err 9.75e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,256,10,1.0274,1.0097,2.0902,9.753e-07,0.000e+00,0.000,PASS
+N=  256 v2   avg      6.701 ms  min      6.244 ms    0.320 TFLOPS  err 4.78e-07  diff_v3 1.25e-06  PASS
+CSV,flash,v2,fp32,256,10,6.7008,6.2444,0.3205,4.783e-07,1.252e-06,0.250,PASS
+N=  256 v1   avg      6.288 ms  min      5.392 ms    0.341 TFLOPS  err 4.21e-07  diff_v3 1.07e-06  PASS
+CSV,flash,v1,fp32,256,10,6.2885,5.3924,0.3415,4.205e-07,1.073e-06,0.250,PASS
+N=  512 v3   avg      3.127 ms  min      3.010 ms    2.747 TFLOPS  err 5.74e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,512,10,3.1272,3.0095,2.7468,5.739e-07,0.000e+00,0.000,PASS
+N=  512 v3h  avg      3.242 ms  min      2.974 ms    2.650 TFLOPS  err 5.74e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,512,10,3.2417,2.9737,2.6499,5.739e-07,0.000e+00,0.000,PASS
+N=  512 v2   avg     19.144 ms  min     18.797 ms    0.449 TFLOPS  err 3.41e-07  diff_v3 9.83e-07  PASS
+CSV,flash,v2,fp32,512,10,19.1443,18.7965,0.4487,3.409e-07,9.835e-07,0.500,PASS
+N=  512 v1   avg     22.823 ms  min     22.317 ms    0.376 TFLOPS  err 3.41e-07  diff_v3 1.01e-06  PASS
+CSV,flash,v1,fp32,512,10,22.8234,22.3172,0.3764,3.409e-07,1.013e-06,0.500,PASS
+N= 1024 v3   avg     13.487 ms  min     10.881 ms    2.548 TFLOPS  err 4.40e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,1024,10,13.4867,10.8810,2.5477,4.402e-07,0.000e+00,0.000,PASS
+N= 1024 v3h  avg     13.673 ms  min     11.358 ms    2.513 TFLOPS  err 4.40e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,1024,10,13.6727,11.3582,2.5130,4.402e-07,0.000e+00,0.000,PASS
+N= 1024 v2   avg     77.814 ms  min     77.167 ms    0.442 TFLOPS  err 2.57e-07  diff_v3 1.01e-06  PASS
+CSV,flash,v2,fp32,1024,10,77.8137,77.1666,0.4416,2.571e-07,1.013e-06,1.000,PASS
+N= 1024 v1   avg    101.952 ms  min    100.892 ms    0.337 TFLOPS  err 2.43e-07  diff_v3 1.10e-06  PASS
+CSV,flash,v1,fp32,1024,10,101.9524,100.8916,0.3370,2.427e-07,1.103e-06,1.000,PASS
+N= 2048 v3   avg     54.084 ms  min     53.595 ms    2.541 TFLOPS  err 3.32e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,2048,10,54.0841,53.5951,2.5412,3.322e-07,0.000e+00,0.000,PASS
+N= 2048 v3h  avg     53.516 ms  min     53.161 ms    2.568 TFLOPS  err 3.32e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,2048,10,53.5158,53.1610,2.5682,3.322e-07,0.000e+00,0.000,PASS
+N= 2048 v2   avg    370.418 ms  min    365.115 ms    0.371 TFLOPS  err 1.55e-07  diff_v3 1.16e-06  PASS
+CSV,flash,v2,fp32,2048,10,370.4178,365.1146,0.3710,1.549e-07,1.162e-06,2.000,PASS
+N= 2048 v1   avg    404.083 ms  min    399.463 ms    0.340 TFLOPS  err 1.30e-07  diff_v3 1.07e-06  PASS
+CSV,flash,v1,fp32,2048,10,404.0827,399.4634,0.3401,1.295e-07,1.073e-06,2.000,PASS
+N= 4096 v3   avg    215.436 ms  min    212.297 ms    2.552 TFLOPS  err 3.58e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,4096,10,215.4360,212.2967,2.5518,3.581e-07,0.000e+00,0.000,PASS
+N= 4096 v3h  avg    212.750 ms  min    206.718 ms    2.584 TFLOPS  err 3.58e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,4096,10,212.7497,206.7179,2.5840,3.581e-07,0.000e+00,0.000,PASS
+N= 4096 v2   avg   1506.570 ms  min   1501.938 ms    0.365 TFLOPS  err 7.94e-08  diff_v3 8.20e-07  PASS
+CSV,flash,v2,fp32,4096,10,1506.5703,1501.9379,0.3649,7.942e-08,8.196e-07,4.000,PASS
+N= 4096 v1   avg   1620.116 ms  min   1615.710 ms    0.339 TFLOPS  err 8.60e-08  diff_v3 7.45e-07  PASS
+CSV,flash,v1,fp32,4096,10,1620.1157,1615.7101,0.3393,8.599e-08,7.451e-07,4.000,PASS
+N= 8192 v3   avg    861.142 ms  min    856.625 ms    2.554 TFLOPS  err 3.73e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3,fp32,8192,10,861.1416,856.6252,2.5536,3.731e-07,0.000e+00,0.000,PASS
+N= 8192 v3h  avg    855.195 ms  min    852.886 ms    2.571 TFLOPS  err 3.73e-07  diff_v3 0.00e+00  PASS
+CSV,flash,v3h,fp16,8192,10,855.1945,852.8856,2.5714,3.731e-07,0.000e+00,0.000,PASS
+N= 8192 v2   skipped: predicted 6.0 s per launch exceeds the display watchdog
+CSV,flash,v2,fp32,8192,0,nan,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N= 8192 v1   skipped: predicted 6.5 s per launch exceeds the display watchdog
+CSV,flash,v1,fp32,8192,0,nan,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+=== FlashAttention: PyTorch naive + SDPA baselines ===
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU | 7808 MB | torch 2.6.0+cu124 | CUDA 12.4
+fp16 N=   32 naive              avg      0.079 ms  min      0.075 ms    0.425 TFLOPS  extra       8.6 MB  diff nan  OK
+fp16 N=   32 sdpa_flash         avg      0.048 ms  min      0.047 ms    0.697 TFLOPS  extra       0.0 MB  diff 1.95e-03  OK
+fp16 N=   64 naive              avg      0.077 ms  min      0.073 ms    1.753 TFLOPS  extra       2.0 MB  diff nan  OK
+fp16 N=   64 sdpa_flash         avg      0.048 ms  min      0.046 ms    2.795 TFLOPS  extra       0.0 MB  diff 1.34e-03  OK
+fp16 N=  128 naive              avg      0.099 ms  min      0.097 ms    5.438 TFLOPS  extra       8.0 MB  diff nan  OK
+fp16 N=  128 sdpa_flash         avg      0.047 ms  min      0.046 ms   11.401 TFLOPS  extra       0.1 MB  diff 1.95e-03  OK
+fp16 N=  256 naive              avg      0.368 ms  min      0.367 ms    5.839 TFLOPS  extra      32.0 MB  diff nan  OK
+fp16 N=  256 sdpa_flash         avg      0.125 ms  min      0.118 ms   17.232 TFLOPS  extra       0.1 MB  diff 1.46e-03  OK
+fp16 N=  512 naive              avg      2.385 ms  min      2.191 ms    3.602 TFLOPS  extra     128.0 MB  diff nan  OK
+fp16 N=  512 sdpa_flash         avg      0.467 ms  min      0.465 ms   18.406 TFLOPS  extra       0.2 MB  diff 9.77e-04  OK
+fp16 N= 1024 naive              avg      8.734 ms  min      8.293 ms    3.934 TFLOPS  extra     512.0 MB  diff nan  OK
+fp16 N= 1024 sdpa_flash         avg      2.373 ms  min      1.968 ms   14.481 TFLOPS  extra       0.5 MB  diff 7.32e-04  OK
+fp16 N= 2048 naive              avg     52.028 ms  min     49.834 ms    2.642 TFLOPS  extra    2048.0 MB  diff nan  OK
+fp16 N= 2048 sdpa_flash         avg      7.259 ms  min      6.661 ms   18.933 TFLOPS  extra       1.0 MB  diff 4.88e-04  OK
+fp16 N= 4096 naive              avg        nan ms  min        nan ms      nan TFLOPS  extra       nan MB  diff nan  OOM
+fp16 N= 4096 sdpa_flash         avg     27.269 ms  min     26.017 ms   20.160 TFLOPS  extra       2.0 MB  diff nan  OK
+fp16 N= 8192 naive              avg        nan ms  min        nan ms      nan TFLOPS  extra       nan MB  diff nan  OOM
+fp16 N= 8192 sdpa_flash         avg    109.022 ms  min    106.917 ms   20.170 TFLOPS  extra       4.0 MB  diff nan  OK
+fp32 N=   32 naive              avg      0.098 ms  min      0.095 ms    0.342 TFLOPS  extra       1.0 MB  diff nan  OK
+fp32 N=   32 sdpa_mem_efficient avg      0.047 ms  min      0.046 ms    0.714 TFLOPS  extra       0.0 MB  diff 1.91e-06  OK
+fp32 N=   64 naive              avg      0.112 ms  min      0.111 ms    1.195 TFLOPS  extra       4.0 MB  diff nan  OK
+fp32 N=   64 sdpa_mem_efficient avg      0.056 ms  min      0.054 ms    2.387 TFLOPS  extra       0.0 MB  diff 2.44e-06  OK
+fp32 N=  128 naive              avg      0.167 ms  min      0.160 ms    3.213 TFLOPS  extra      16.0 MB  diff nan  OK
+fp32 N=  128 sdpa_mem_efficient avg      0.162 ms  min      0.161 ms    3.312 TFLOPS  extra       0.0 MB  diff 2.15e-06  OK
+fp32 N=  256 naive              avg      1.057 ms  min      1.037 ms    2.031 TFLOPS  extra      64.0 MB  diff nan  OK
+fp32 N=  256 sdpa_mem_efficient avg      0.676 ms  min      0.546 ms    3.179 TFLOPS  extra       0.0 MB  diff 1.79e-06  OK
+fp32 N=  512 naive              avg      6.351 ms  min      4.719 ms    1.353 TFLOPS  extra     256.0 MB  diff nan  OK
+fp32 N=  512 sdpa_mem_efficient avg      4.780 ms  min      3.682 ms    1.797 TFLOPS  extra       0.0 MB  diff 1.43e-06  OK
+fp32 N= 1024 naive              avg     28.764 ms  min     25.905 ms    1.195 TFLOPS  extra    1024.0 MB  diff nan  OK
+fp32 N= 1024 sdpa_mem_efficient avg     13.500 ms  min     12.149 ms    2.545 TFLOPS  extra       0.0 MB  diff 1.82e-06  OK
+fp32 N= 2048 naive              avg    101.067 ms  min     97.481 ms    1.360 TFLOPS  extra    4096.0 MB  diff nan  OK
+fp32 N= 2048 sdpa_mem_efficient avg     48.612 ms  min     47.599 ms    2.827 TFLOPS  extra       0.0 MB  diff 2.59e-06  OK
+fp32 N= 4096 naive              avg        nan ms  min        nan ms      nan TFLOPS  extra       nan MB  diff nan  OOM
+fp32 N= 4096 sdpa_mem_efficient avg    200.342 ms  min    197.183 ms    2.744 TFLOPS  extra       0.0 MB  diff nan  OK
+fp32 N= 8192 naive              avg        nan ms  min        nan ms      nan TFLOPS  extra       nan MB  diff nan  OOM
+fp32 N= 8192 sdpa_mem_efficient avg    794.167 ms  min    792.385 ms    2.769 TFLOPS  extra       0.0 MB  diff nan  OK
+wrote results/flash_attention_torch.csv
+Compiling entry function '_Z12max_abs_diffPKfS0_mPiS1_' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 15 registers, used 0 barriers, 392 bytes cmem[0]
+Compiling entry function '_Z12init_uniformPfmj' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 10 registers, used 0 barriers, 372 bytes cmem[0]
+Compiling entry function '_Z16sgemm_vectorizediPKfS0_Pf' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 127 registers, used 1 barriers, 8192 bytes smem, 384 bytes cmem[0]
+Compiling entry function '_Z18sgemm_reg_block_2diPKfS0_Pf' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 128 registers, used 1 barriers, 8192 bytes smem, 384 bytes cmem[0]
+Compiling entry function '_Z14colBasedTilingPfS_S_i' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 44 registers, used 1 barriers, 20480 bytes smem, 380 bytes cmem[0]
+Compiling entry function '_Z14RowBasedTilingPfS_S_i' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 39 registers, used 1 barriers, 20480 bytes smem, 380 bytes cmem[0]
+Compiling entry function '_Z12simpleTilingPfS_S_i' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 38 registers, used 1 barriers, 8192 bytes smem, 380 bytes cmem[0]
+Compiling entry function '_Z24MatMulGPUCoalescedAccessPfS_S_i' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 40 registers, used 0 barriers, 380 bytes cmem[0]
+Compiling entry function '_Z14MatMulGPUNaivePfS_S_i' for 'sm_89'
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+Used 40 registers, used 0 barriers, 380 bytes cmem[0]
+built gemm_bench
+=== GEMM ladder (takes a few minutes) ===
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU | SMs: 24 | CC 8.9 | 7808 MB
+CSV,device,NVIDIA GeForce RTX 4060 Laptop GPU,24,8.9,7808
+CSV,header,kernel,N,iters,avg_ms,min_ms,tflops,pct_of_cublas,rel_err_vs_cublas,status
+kernel run-time watchdog: ON (long runs will be skipped)
+N= 1024 cublas_sgemm     avg      0.347 ms  min      0.340 ms    6.196 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,1024,10,0.3466,0.3400,6.1958,100.00,0.000e+00,PASS
+N= 1024 k1_naive         avg     23.979 ms  min     18.164 ms    0.090 TFLOPS     1.4% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k1_naive,1024,10,23.9794,18.1637,0.0896,1.45,1.752e-06,PASS
+N= 1024 k2_coalesced     avg      2.222 ms  min      2.160 ms    0.967 TFLOPS    15.6% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k2_coalesced,1024,10,2.2217,2.1596,0.9666,15.60,1.752e-06,PASS
+N= 1024 k3_smem_tiling   avg      1.711 ms  min      1.701 ms    1.255 TFLOPS    20.3% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k3_smem_tiling,1024,10,1.7112,1.7009,1.2550,20.26,1.752e-06,PASS
+N= 1024 k4_row_coarsen   avg      1.334 ms  min      1.323 ms    1.610 TFLOPS    26.0% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k4_row_coarsen,1024,10,1.3339,1.3230,1.6100,25.99,1.752e-06,PASS
+N= 1024 k5_col_coarsen   avg      0.728 ms  min      0.715 ms    2.949 TFLOPS    47.6% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k5_col_coarsen,1024,10,0.7282,0.7149,2.9492,47.60,1.752e-06,PASS
+N= 1024 k6_reg_block_2d  avg      0.446 ms  min      0.438 ms    4.811 TFLOPS    77.6% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k6_reg_block_2d,1024,10,0.4464,0.4383,4.8106,77.64,1.752e-06,PASS
+N= 1024 k7_vectorized    avg      0.366 ms  min      0.363 ms    5.875 TFLOPS    94.8% of cuBLAS  rel_err 1.75e-06  PASS
+CSV,gemm,k7_vectorized,1024,10,0.3656,0.3634,5.8745,94.82,1.752e-06,PASS
+N= 2048 cublas_sgemm     avg      2.571 ms  min      2.402 ms    6.682 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,2048,10,2.5711,2.4023,6.6820,100.00,0.000e+00,PASS
+N= 2048 k1_naive         avg    146.063 ms  min    145.353 ms    0.118 TFLOPS     1.8% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k1_naive,2048,10,146.0632,145.3527,0.1176,1.76,0.000e+00,PASS
+N= 2048 k2_coalesced     avg     25.369 ms  min     22.038 ms    0.677 TFLOPS    10.1% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k2_coalesced,2048,10,25.3695,22.0375,0.6772,10.13,0.000e+00,PASS
+N= 2048 k3_smem_tiling   avg     17.965 ms  min     17.061 ms    0.956 TFLOPS    14.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k3_smem_tiling,2048,10,17.9649,17.0609,0.9563,14.31,0.000e+00,PASS
+N= 2048 k4_row_coarsen   avg     13.804 ms  min     13.269 ms    1.245 TFLOPS    18.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k4_row_coarsen,2048,10,13.8037,13.2690,1.2446,18.63,0.000e+00,PASS
+N= 2048 k5_col_coarsen   avg      8.368 ms  min      7.239 ms    2.053 TFLOPS    30.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k5_col_coarsen,2048,10,8.3676,7.2387,2.0531,30.73,0.000e+00,PASS
+N= 2048 k6_reg_block_2d  avg      3.711 ms  min      3.405 ms    4.630 TFLOPS    69.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,2048,10,3.7109,3.4048,4.6296,69.28,0.000e+00,PASS
+N= 2048 k7_vectorized    avg      3.713 ms  min      3.474 ms    4.627 TFLOPS    69.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,2048,10,3.7126,3.4744,4.6274,69.25,0.000e+00,PASS
+N= 4096 cublas_sgemm     avg     34.273 ms  min     32.906 ms    4.010 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,4096,10,34.2735,32.9062,4.0101,100.00,0.000e+00,PASS
+N= 4096 k1_naive         avg   1249.308 ms  min   1246.542 ms    0.110 TFLOPS     2.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k1_naive,4096,10,1249.3080,1246.5419,0.1100,2.74,0.000e+00,PASS
+N= 4096 k2_coalesced     avg    246.756 ms  min    237.232 ms    0.557 TFLOPS    13.9% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k2_coalesced,4096,10,246.7564,237.2321,0.5570,13.89,0.000e+00,PASS
+N= 4096 k3_smem_tiling   avg    168.425 ms  min    166.400 ms    0.816 TFLOPS    20.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k3_smem_tiling,4096,10,168.4251,166.4000,0.8160,20.35,0.000e+00,PASS
+N= 4096 k4_row_coarsen   avg    119.691 ms  min    118.000 ms    1.148 TFLOPS    28.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k4_row_coarsen,4096,10,119.6905,117.9996,1.1483,28.64,0.000e+00,PASS
+N= 4096 k5_col_coarsen   avg     73.211 ms  min     71.906 ms    1.877 TFLOPS    46.8% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k5_col_coarsen,4096,10,73.2105,71.9063,1.8773,46.81,0.000e+00,PASS
+N= 4096 k6_reg_block_2d  avg     37.116 ms  min     36.398 ms    3.703 TFLOPS    92.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,4096,10,37.1159,36.3981,3.7030,92.34,0.000e+00,PASS
+N= 4096 k7_vectorized    avg     33.694 ms  min     33.079 ms    4.079 TFLOPS   101.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,4096,10,33.6941,33.0793,4.0790,101.72,0.000e+00,PASS
+N= 8192 cublas_sgemm     avg    253.000 ms  min    249.772 ms    4.346 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,8192,10,253.0003,249.7720,4.3459,100.00,0.000e+00,PASS
+N= 8192 k1_naive         skipped: predicted 10.0 s per launch exceeds the display watchdog
+CSV,gemm,k1_naive,8192,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N= 8192 k2_coalesced     avg   1925.995 ms  min   1922.290 ms    0.571 TFLOPS    13.1% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k2_coalesced,8192,10,1925.9946,1922.2897,0.5709,13.14,0.000e+00,PASS
+N= 8192 k3_smem_tiling   avg   1350.466 ms  min   1347.631 ms    0.814 TFLOPS    18.7% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k3_smem_tiling,8192,10,1350.4658,1347.6311,0.8142,18.73,0.000e+00,PASS
+N= 8192 k4_row_coarsen   avg    951.358 ms  min    947.928 ms    1.156 TFLOPS    26.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k4_row_coarsen,8192,10,951.3577,947.9280,1.1557,26.59,0.000e+00,PASS
+N= 8192 k5_col_coarsen   avg    583.741 ms  min    577.564 ms    1.884 TFLOPS    43.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k5_col_coarsen,8192,10,583.7412,577.5637,1.8836,43.34,0.000e+00,PASS
+N= 8192 k6_reg_block_2d  avg    289.929 ms  min    280.675 ms    3.792 TFLOPS    87.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,8192,10,289.9288,280.6753,3.7924,87.26,0.000e+00,PASS
+N= 8192 k7_vectorized    avg    257.711 ms  min    256.284 ms    4.266 TFLOPS    98.2% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,8192,10,257.7113,256.2837,4.2664,98.17,0.000e+00,PASS
+N=16384 cublas_sgemm     avg   1992.386 ms  min   1959.477 ms    4.415 TFLOPS   100.0% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,cublas_sgemm,16384,10,1992.3865,1959.4773,4.4149,100.00,0.000e+00,PASS
+CSV,gemm,k1_naive,16384,0,nan,nan,nan,nan,nan,SKIPPED
+CSV,gemm,k2_coalesced,16384,0,nan,nan,nan,nan,nan,SKIPPED
+N=16384 k3_smem_tiling   skipped: predicted 10.8 s per launch exceeds the display watchdog
+CSV,gemm,k3_smem_tiling,16384,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N=16384 k4_row_coarsen   skipped: predicted 7.6 s per launch exceeds the display watchdog
+CSV,gemm,k4_row_coarsen,16384,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N=16384 k5_col_coarsen   skipped: predicted 4.7 s per launch exceeds the display watchdog
+CSV,gemm,k5_col_coarsen,16384,0,nan,nan,nan,nan,nan,SKIPPED_WATCHDOG
+N=16384 k6_reg_block_2d  avg   2256.191 ms  min   2248.586 ms    3.899 TFLOPS    88.3% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k6_reg_block_2d,16384,10,2256.1910,2248.5862,3.8986,88.31,0.000e+00,PASS
+N=16384 k7_vectorized    avg   2084.249 ms  min   2069.600 ms    4.220 TFLOPS    95.6% of cuBLAS  rel_err 0.00e+00  PASS
+CSV,gemm,k7_vectorized,16384,10,2084.2491,2069.6003,4.2203,95.59,0.000e+00,PASS
+=== clocks / throttling after the run ===
+clocks.current.sm [MHz], clocks.current.memory [MHz], power.draw [W], temperature.gpu, clocks_event_reasons.active
+2640 MHz, 6001 MHz, 31.73 W, 53, 0x0000000000000000
+
+ALL DONE. Results are in perf/results/. To send them back:
+  git add perf/results && git commit -m "Benchmark results (all)" && git push
